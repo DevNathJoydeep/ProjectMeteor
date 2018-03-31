@@ -1698,7 +1698,7 @@
   text-align: center;
   margin: 0.25em 0 1.25em 0;
 }
-.bookingWrapper .boxLeftOneWayFlight, .bookingWrapper .boxLeftReturnTripFlight, .bookingWrapper .boxLeftHotel {
+.bookingWrapper .boxLeftOneWayFlight, .bookingWrapper .boxLeftReturnTripFlight, .bookingWrapper .boxLeftHotel, .bookingWrapper .boxLeftBus {
   box-sizing: border-box;
   background: #f5f5ff;
   height: auto;
@@ -1725,6 +1725,17 @@
   background: #f5f5ff;
   height: auto;
   min-height: 21em;
+  vertical-align: middle;
+  margin: 1.5em 2em 1.5em 0;
+  border: 2px solid #251974;
+  border-radius: 8px;
+  padding: 1.25em 2.25em 1em 2.25em;
+}
+.bookingWrapper .boxRightBus {
+  box-sizing: border-box;
+  background: #f5f5ff;
+  height: auto;
+  min-height: 19em;
   vertical-align: middle;
   margin: 1.5em 2em 1.5em 0;
   border: 2px solid #251974;
@@ -3868,6 +3879,17 @@
 }
 .searchBus .col-sm-2:last-child, .searchBus .col-sm-1:last-child, .searchBus .col-sm-3:last-child {
   border-right: none;
+}
+.searchBus .col-sm-4 {
+  border-right: 1px solid #251974;
+  position: relative;
+  top: +0.25em;
+}
+.searchBus .heightAdjustBusSearch {
+  border-right: 1px solid #251974;
+  position: relative;
+  top: +0.25em;
+  min-height: 4.75em !important;
 }
 .searchBus .heading {
   font-size: 2.5em;

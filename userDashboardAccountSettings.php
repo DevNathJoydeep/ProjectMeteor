@@ -128,6 +128,10 @@ if(!isset($_SESSION["username"]))
 					$cabBookingsQuery = $conn->query($cabBookingsSQL);
 					$noOfCabBookings = $cabBookingsQuery->fetch_array(MYSQLI_NUM);
 				
+					$busBookingsSQL = "SELECT COUNT(*) FROM `busbookings` WHERE Username='$user'";
+					$busBookingsQuery = $conn->query($busBookingsSQL);
+					$noOfBusBookings = $busBookingsQuery->fetch_array(MYSQLI_NUM);
+				
 					/*---------------------------------------------------------------------
 					
 					
@@ -147,7 +151,7 @@ if(!isset($_SESSION["username"]))
 					<span class="tag">No. of train bookings:  </span><span class="content text"><?php echo "0"?> </span>
 					</div> <!-- change echo -->
 					<div class="col-sm-6 settingsWrapper">
-					<span class="tag">No. of bus bookings: </span><span class="content"><?php echo "0"; ?> </span>
+					<span class="tag">No. of bus bookings: </span><span class="content"><?php echo $noOfBusBookings[0]; ?> </span>
 					</div> <!-- change echo -->
 					<div class="col-sm-6 settingsWrapper">
 					<span class="tag">No. of cab bookings:  </span><span class="content text"><?php echo $noOfCabBookings[0]; ?> </span>

@@ -67,7 +67,14 @@ if(!isset($_SESSION["username"]))
 			else
 				$className="Business";
 		
-			$totalPassengers=$adults+$children;
+		
+			if($mode=="bus") {
+				$date = $_POST["dateHidden"];
+				$busID = $_POST["busIDHidden"];
+				$totalPassengers=$_POST["noOfPassengersHidden"];
+				$origin=$_POST["originHidden"];
+				$destination=$_POST["destinationHidden"];
+			}
 		
 		?>
 		
@@ -119,7 +126,12 @@ if(!isset($_SESSION["username"]))
 						<input type="hidden" name="returnHidden" value="<?php echo $return; ?>">
 						<input type="hidden" name="adultsHidden" value="<?php echo $adults; ?>">
 						<input type="hidden" name="childrenHidden" value="<?php echo $children; ?>">
-						<input type="hidden" name="modeHidden" value="<?php echo $mode ?>">
+						<input type="hidden" name="modeHidden" value="<?php echo $mode; ?>">
+						
+						<?php if($mode="bus") { ?>
+							<input type="hidden" name="dateHidden" value="<?php echo $date; ?>">
+							<input type="hidden" name="busIDHidden" value="<?php echo $busID; ?>">
+						<?php } ?>
 						
 						<?php if($type=="Return Trip") { ?>
 						<input type="hidden" name="flightNoOutboundHidden" value="<?php echo $flightNoOutbound; ?>">

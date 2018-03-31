@@ -17,7 +17,7 @@ $light_blue: rgba(0,111,255,1.00);
 		margin: 0.25em 0 1.25em 0; 
 	}
 	
-	.boxLeftOneWayFlight, .boxLeftReturnTripFlight, .boxLeftHotel {					//consider using a mixin
+	.boxLeftOneWayFlight, .boxLeftReturnTripFlight, .boxLeftHotel, .boxLeftBus {					//consider using a mixin
 		box-sizing: border-box;
 		background:rgba(245,245,255,1.00);
 		height: auto;
@@ -46,6 +46,18 @@ $light_blue: rgba(0,111,255,1.00);
 		background:rgba(245,245,255,1.00);
 		height: auto;
 		min-height: 21em;
+		vertical-align: middle;
+		margin: 1.5em 2em 1.5em 0;
+		border: 2px solid $deep_blue;
+		border-radius: 8px;
+		padding: 1.25em 2.25em 1em 2.25em;
+	}
+	
+	.boxRightBus {					//consider using a mixin
+		box-sizing: border-box;
+		background:rgba(245,245,255,1.00);
+		height: auto;
+		min-height: 19em;
 		vertical-align: middle;
 		margin: 1.5em 2em 1.5em 0;
 		border: 2px solid $deep_blue;

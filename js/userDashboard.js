@@ -105,4 +105,22 @@ $(document).ready(function() {
 		}
 	});
 	
+	$('.cancelBusTicket').click(function() {
+		if (confirm('Are you sure you want to cancel this booking?')) {
+  			var id = $(this).closest('tr').find('td:first').text().trim();
+			var hide = $(this).closest('tr');
+			
+  			$.ajax({
+  			  type: "POST",
+  			  url: 'cancelBusTicket.php',
+  			  data: {
+  			    bookingID: id
+  			  },
+  			  success: function() {
+				  hide.css("display", "none");
+  			  }
+  			});
+		}
+	});
+	
 }); //document ready

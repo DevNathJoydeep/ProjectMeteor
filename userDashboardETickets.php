@@ -124,6 +124,10 @@ if(!isset($_SESSION["username"]))
 					$cabBookingsQuery = $conn->query($cabBookingsSQL);
 					$noOfCabBookings = $cabBookingsQuery->fetch_array(MYSQLI_NUM);
 				
+					$busBookingsSQL = "SELECT COUNT(*) FROM `busbookings` WHERE username='$user' AND cancelled='no'";
+					$busBookingsQuery = $conn->query($busBookingsSQL);
+					$noOfBusBookings = $busBookingsQuery->fetch_array(MYSQLI_NUM);
+				
 					/*---------------------------------------------------------------------
 					
 					
@@ -148,7 +152,7 @@ if(!isset($_SESSION["username"]))
 						
 						<option value="flightTickets">Flight Tickets (<?php echo $noOfFlightBookings[0]; ?>)</option>
 						<option value="trainTickets">Train Tickets (<?php echo "0" ?>)</option> <!-- change echo -->
-						<option value="busTickets">Bus Tickets (<?php echo "0" ?>)</option> <!-- change echo -->
+						<option value="busTickets">Bus Tickets (<?php echo $noOfBusBookings[0] ?>)</option> <!-- change echo -->
 						<option value="cabTickets">Cab Tickets (<?php echo $noOfCabBookings[0] ?>)</option> <!-- change echo -->
 						
 					</select>
@@ -282,27 +286,74 @@ if(!isset($_SESSION["username"]))
 				--------------------------------------------------------------------------------------------------->
 				
 				
-				<!-------------------------------------------------------------------------------------------------
+				
+					<?php if($noOfBusBookings[0]>0): ?>
+					
+					
+					<!-------------------------------------------------------------------------------------------------
 					
 					
 													BUS TICKETS SECTION STARTS
 													
 													
-				--------------------------------------------------------------------------------------------------->
+					--------------------------------------------------------------------------------------------------->
 				
+				<div class="col-sm-12 ticketTableContainer pullABitLeft" id="busTicketsWrapper">
+					
+						<table class="table table-responsive">
+							<thead>
+								<tr>
+									<th class="tableHeaderTags text-center" style="vertical-align: middle;">Id</th>
+									<th class="tableHeaderTags text-center" style="vertical-align: middle;">Origin</th>
+									<th class="tableHeaderTags text-center" style="vertical-align: middle;">Destination</th>
+									<th class="tableHeaderTags text-center" style="vertical-align: middle;">Date</th>
+									<th class="tableHeaderTags text-center" style="vertical-align: middle;">Ticket</th>
+								</tr>
+							</thead>
+							
+							<?php
+	
+								$busTicketsSQL = "SELECT * FROM `busbookings` WHERE username='$user' AND cancelled='no'";
+								$busTicketsQuery = $conn->query($busTicketsSQL);
 				
+								while($busTicketsRow = $busTicketsQuery->fetch_assoc()) { 
+									
+								?>
+								
+								<tr>
+									<td class="tableElementTagsNoHover text-center"><?php echo $busTicketsRow["bookingID"]; ?></td>
+									<td class="tableElementTagsNoHover text-center"><?php echo $busTicketsRow["origin"]; ?></td>
+									<td class="tableElementTagsNoHover text-center"><?php echo $busTicketsRow["destination"]; ?></td>
+									<td class="tableElementTagsNoHover text-center"><?php echo $busTicketsRow["date"]; ?></td>
+									<td class="text-center"><a href="tickets/busTicket<?php echo $busTicketsRow["bookingID"]; ?>.html" target="_blank"><span class="fa fa-download tableElementTags pullSpan"></span></a></td>
+								</tr>
+								
+							<?php } ?>
+					
+						</table>
+						
+				</div>
+				
+				<?php else: ?>
 				
 				<div class="col-sm-12 ticketTableContainer" id="busTicketsWrapper">
 				
-					Here's the bus tickets
+					<div class="noBooking">
+					
+						Looks like you haven't booked any bus with us yet. This area will list all your bus bookings once you start booking buses.
+					
+					</div>
 				
 				</div>
+				
+				<?php endif; ?>
+				
 				
 				
 				<!-------------------------------------------------------------------------------------------------
 					
 					
-													BUS TICKETS SECTION ENDS
+													FLIGHT TICKETS SECTION ENDS
 													
 													
 				--------------------------------------------------------------------------------------------------->

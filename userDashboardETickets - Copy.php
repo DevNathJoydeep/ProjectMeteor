@@ -92,26 +92,26 @@ if(!isset($_SESSION["username"]))
 				</div>
 				</a>
 				
-				<a href="userDashboardETickets.php">
-				<div class="col-sm-12 menuContainer bottomBorder">
+				<div class="col-sm-12 menuContainer bottomBorder active">
 					<span class="fa fa-clone"></span> My E-Tickets
+				</div>
+				
+				<a href="userDashboardCancelTicket.php">
+				<div class="col-sm-12 menuContainer bottomBorder">
+					<span class="fa fa-close"></span> Cancel Ticket
 				</div>
 				</a>
 				
-				<div class="col-sm-12 menuContainer bottomBorder active">
-					<span class="fa fa-close"></span> Cancel Ticket
-				</div>
-				
 				<a href="userDashboardAccountSettings.php">
-				<div class="col-sm-12 menuContainer noBottomBorder">
+				<div class="col-sm-12 menuContainer">
 					<span class="fa fa-bar-chart"></span> Account Stats
 				</div>
 				</a>
 				
 			</div>
 			
-			<div class="col-sm-7 containerBoxRight">
-				
+			<div class="col-sm-7 containerBoxRight text-left">
+			
 				<?php 
 				
 					$user = $_SESSION["username"];
@@ -120,19 +120,19 @@ if(!isset($_SESSION["username"]))
 					$flightBookingsQuery = $conn->query($flightBookingsSQL);
 					$noOfFlightBookings = $flightBookingsQuery->fetch_array(MYSQLI_NUM);
 				
-					$cabBookingsSQL = "SELECT COUNT(*) FROM `cabbookings` WHERE Username='$user' AND cancelled='no'";
+					$cabBookingsSQL = "SELECT COUNT(*) FROM `cabbookings` WHERE username='$user' AND cancelled='no'";
 					$cabBookingsQuery = $conn->query($cabBookingsSQL);
 					$noOfCabBookings = $cabBookingsQuery->fetch_array(MYSQLI_NUM);
 				
-					$busBookingsSQL = "SELECT COUNT(*) FROM `busbookings` WHERE Username='$user' AND cancelled='no'";
+					$busBookingsSQL = "SELECT COUNT(*) FROM `busbookings` WHERE username='$user' AND cancelled='no'";
 					$busBookingsQuery = $conn->query($busBookingsSQL);
 					$noOfBusBookings = $busBookingsQuery->fetch_array(MYSQLI_NUM);
 				
 					/*---------------------------------------------------------------------
 					
 					
-					   ADD SIMILAR SQL STATEMENTS TO COUNT NO. OF TRAIN BOOKINGS
-					
+					ADD SIMILAR SQL STATEMENTS TO COUNT NO. OF TRAINS, BUSES, CABS BOOKINGS
+												AND HOTELS
 						
 					---------------------------------------------------------------------*/
 				
@@ -142,7 +142,7 @@ if(!isset($_SESSION["username"]))
 				
 					<div class="col-sm-6 ticketsWrapper topMargin">
 						
-						<div class="tagLeft">Select the type of ticket: </div>
+						<div class="tag">Select the type of ticket: </div>
 						
 					</div>
 					
@@ -150,10 +150,10 @@ if(!isset($_SESSION["username"]))
 					
 					<select class="input" name="ticketTypeSelector" id="ticketTypeSelector"/>
 						
-						<option value="flightTickets">Flight Tickets</option>
-						<option value="trainTickets">Train Tickets</option> <!-- change echo -->
-						<option value="busTickets">Bus Tickets</option> <!-- change echo -->
-						<option value="cabTickets">Cab Tickets</option> <!-- change echo -->
+						<option value="flightTickets">Flight Tickets (<?php echo $noOfFlightBookings[0]; ?>)</option>
+						<option value="trainTickets">Train Tickets (<?php echo "0" ?>)</option> <!-- change echo -->
+						<option value="busTickets">Bus Tickets (<?php echo "0" ?>)</option> <!-- change echo -->
+						<option value="cabTickets">Cab Tickets (<?php echo $noOfCabBookings[0] ?>)</option> <!-- change echo -->
 						
 					</select>
 					
@@ -208,7 +208,7 @@ if(!isset($_SESSION["username"]))
 									<td class="tableElementTagsNoHover text-center"><?php echo $flightTicketsRow["destination"]; ?></td>
 									<td class="tableElementTagsNoHover text-center"><?php echo $flightTicketsRow["date"]; ?></td>
 									<td class="tableElementTagsNoHover text-center"><?php echo $modePrint; ?></td>
-									<td class="text-center"><span class="fa fa-remove tableElementTags pullSpan cancelTicket"></span></td>
+									<td class="text-center"><a href="tickets/ticket<?php echo $flightTicketsRow["bookingID"]; ?>.html" target="_blank"><span class="fa fa-download tableElementTags pullSpan"></span></a></td>
 								</tr>
 								
 							<?php } ?>
@@ -286,67 +286,21 @@ if(!isset($_SESSION["username"]))
 				--------------------------------------------------------------------------------------------------->
 				
 				
-				<?php if($noOfBusBookings[0]>0): ?>
-					
-					
-					<!-------------------------------------------------------------------------------------------------
+				<!-------------------------------------------------------------------------------------------------
 					
 					
 													BUS TICKETS SECTION STARTS
 													
 													
-					--------------------------------------------------------------------------------------------------->
+				--------------------------------------------------------------------------------------------------->
 				
-				<div class="col-sm-12 ticketTableContainer pullABitLeft" id="busTicketsWrapper">
-					
-						<table class="table table-responsive">
-							<thead>
-								<tr>
-									<th class="tableHeaderTags text-center" style="vertical-align: middle;">Id</th>
-									<th class="tableHeaderTags text-center" style="vertical-align: middle;">Origin</th>
-									<th class="tableHeaderTags text-center" style="vertical-align: middle;">Destination</th>
-									<th class="tableHeaderTags text-center" style="vertical-align: middle;">Date</th>
-									<th class="tableHeaderTags text-center" style="vertical-align: middle;">Ticket</th>
-								</tr>
-							</thead>
-							
-							<?php
-	
-								$busTicketsSQL = "SELECT * FROM `busbookings` WHERE username='$user' AND cancelled='no'";
-								$busTicketsQuery = $conn->query($busTicketsSQL);
 				
-								while($busTicketsRow = $busTicketsQuery->fetch_assoc()) { 
-									
-								?>
-								
-								<tr>
-									<td class="tableElementTagsNoHover text-center"><?php echo $busTicketsRow["bookingID"]; ?></td>
-									<td class="tableElementTagsNoHover text-center"><?php echo $busTicketsRow["origin"]; ?></td>
-									<td class="tableElementTagsNoHover text-center"><?php echo $busTicketsRow["destination"]; ?></td>
-									<td class="tableElementTagsNoHover text-center"><?php echo $busTicketsRow["date"]; ?></td>
-									<td class="text-center"><span class="fa fa-remove tableElementTags pullSpan cancelBusTicket"></span></td>
-								</tr>
-								
-							<?php } ?>
-					
-						</table>
-						
-				</div>
-				
-				<?php else: ?>
 				
 				<div class="col-sm-12 ticketTableContainer" id="busTicketsWrapper">
 				
-					<div class="noBooking">
-					
-						Looks like you haven't booked any bus with us yet. This area will list all your bus bookings once you start booking buses.
-					
-					</div>
+					Here's the bus tickets
 				
 				</div>
-				
-				<?php endif; ?>
-				
 				
 				
 				<!-------------------------------------------------------------------------------------------------
@@ -359,11 +313,11 @@ if(!isset($_SESSION["username"]))
 				
 				
 				<!-------------------------------------------------------------------------------------------------
-				
-				
-												CAB TICKETS SECTION STARTS
-												
-												
+					
+					
+													CAB TICKETS SECTION STARTS
+													
+													
 				--------------------------------------------------------------------------------------------------->
 				
 				<?php if($noOfCabBookings[0]>0): ?>
@@ -387,7 +341,7 @@ if(!isset($_SESSION["username"]))
 								$cabTicketsQuery = $conn->query($cabTicketsSQL);
 				
 								while($cabTicketsRow = $cabTicketsQuery->fetch_assoc()) { 
-									
+																
 								?>
 								
 								<tr>
@@ -395,7 +349,7 @@ if(!isset($_SESSION["username"]))
 									<td class="tableElementTagsNoHover text-center"><?php echo $cabTicketsRow["origin"]; ?></td>
 									<td class="tableElementTagsNoHover text-center"><?php echo $cabTicketsRow["destination"]; ?></td>
 									<td class="tableElementTagsNoHover text-center"><?php echo $cabTicketsRow["date"]; ?></td>
-									<td class="text-center"><span class="fa fa-remove tableElementTags pullSpan cancelCabTicket"></span></td>
+									<td class="text-center"><a href="cabReceipts/cabReceipt<?php echo $cabTicketsRow["bookingID"]; ?>.html" target="_blank"><span class="fa fa-download tableElementTags pullSpan"></span></a></td>
 								</tr>
 								
 							<?php } ?>
@@ -418,17 +372,18 @@ if(!isset($_SESSION["username"]))
 				
 				<?php endif; ?>
 				
+				
 				<!-------------------------------------------------------------------------------------------------
+					
+					
+													CAB TICKETS SECTION ENDS
+													
+													
+				--------------------------------------------------------------------------------------------------->		
 				
-				
-												CAB TICKETS SECTION ENDS
-												
-												
-				--------------------------------------------------------------------------------------------------->
-			
 				</div>
 				
-			</div>
+			</div> <!-- containerBoxRight -->
 			
 			<div class="col-sm-1"></div>
 			

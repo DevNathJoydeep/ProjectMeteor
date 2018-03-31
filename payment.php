@@ -89,6 +89,19 @@ if(!isset($_SESSION["username"]))
 				$carID=$_SESSION["carID"];
 			} //for hotels
 		
+			elseif($mode=="bus") {
+				$totalPassengers=$_POST["totalPassengersHidden"];
+				$fare=$_POST["fareHidden"];
+				$busID=$_POST["busIDHidden"];
+				$origin=$_POST["originHidden"];
+				$destination=$_POST["destinationHidden"];
+				
+				for($i=1; $i<=$totalPassengers; $i++) {
+					$name[$i]=$_POST["name$i"];
+					$gender[$i]=$_POST["gender$i"];
+				}
+			} //for hotels
+		
 			// add conditions for buses, trains here
 		
 		?>
@@ -228,7 +241,36 @@ if(!isset($_SESSION["username"]))
 						<input type="submit" class="paymentButton" value="Pay Now">
 					</div>
 					
+				</form>
+				
+				<?php elseif($mode=="bus"): ?>
+				
+				<form action="generateBusTicket.php" method="POST">
+				
+					<div class="col-sm-12 bookingButton text-center">
+						
+						<?php $date=$_POST["dateHidden"]; ?>
 					
+						<input type="hidden" name="dateHidden" value="<?php echo $date; ?>">
+						<input type="submit" class="paymentButton" value="Pay Now">
+					</div>
+					
+					<input type="hidden" name="totalPassengersHidden" value="<?php echo $totalPassengers; ?>">
+					<input type="hidden" name="fareHidden" value="<?php echo $fare; ?>">
+					<input type="hidden" name="originHidden" value="<?php echo $origin; ?>">
+					<input type="hidden" name="destinationHidden" value="<?php echo $destination; ?>">
+					<input type="hidden" name="departHidden" value="<?php echo $depart; ?>">
+					<input type="hidden" name="returnHidden" value="<?php echo $return; ?>">
+					<input type="hidden" name="modeHidden" value="<?php echo $mode ?>">
+					
+					<?php for($i=1; $i<=$totalPassengers; $i++) {?>
+					
+						<input type="hidden" name="nameHidden<?php echo $i; ?>" value="<?php echo $name[$i]; ?>">
+						<input type="hidden" name="genderHidden<?php echo $i; ?>" value="<?php echo $gender[$i]; ?>">
+					
+					<?php } ?>
+					
+					<input type="hidden" name="busIDHidden" value="<?php echo $busID; ?>">
 					
 				</form>
 				

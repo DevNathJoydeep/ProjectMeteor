@@ -89,7 +89,7 @@ if(!isset($_SESSION["username"]))
 					
 			<div class="listItemMenuContainer">
 			
-				<div class="col-sm-4 text-center">
+				<div class="col-sm-2 text-center">
 	
 					<div class="headings">
 		
@@ -128,6 +128,16 @@ if(!isset($_SESSION["username"]))
 					</div>
 		
 				</div>
+				
+				<div class="col-sm-2 text-center">
+	
+					<div class="headings">
+		
+						Total Seats
+			
+					</div>
+		
+				</div>
 			
 				<div class="col-sm-2 text-center">
 	
@@ -158,7 +168,7 @@ if(!isset($_SESSION["username"]))
 				
 				<form action="booking.php" method="POST">
 
-				<div class="col-sm-4 text-center heightAdjustBusSearch">
+				<div class="col-sm-2 text-center">
 		
 					<div class="values operators">
 		
@@ -238,6 +248,26 @@ if(!isset($_SESSION["username"]))
 				</div>
 	
 				<!-- FARE ENDS -->
+				
+				<!-- TOTAL SEATS ENDS -->
+				
+				<div class="col-sm-2 text-center">
+		
+						<div class="values seats">
+		
+						<?php echo $row["seats"]; ?>
+			
+					</div>
+		
+					<div class="seatsSubscript">
+		
+						<?php echo $row["windows"]." windows"; ?>
+			
+					</div>
+		
+				</div>
+				
+				<!-- TOTAL SEATS ENDS -->
 	
 				<!-- SEATS AVAILABLE STARTS -->
 				
@@ -268,7 +298,6 @@ if(!isset($_SESSION["username"]))
 					<div class="availabilitySubscript">
 		
 						<input type="submit" class="availabilityBookingButton" value="Book Now">
-						<input type="hidden" name="busIDPass" value="<?php echo $busID; ?>"/>
 			
 					</div>
 		
@@ -299,13 +328,16 @@ if(!isset($_SESSION["username"]))
 				<!-- Passing the $_POST values to the next page using hidden text boxes 
 				I'm not actually sure if this is the industry standard way to do so -->
 		
-				<input type="hidden" name="dateHidden" value="<?php echo $date; ?>">
+				<input type="hidden" name="typeHidden" value="<?php echo $type; ?>">
+				<input type="hidden" name="classHidden" value="<?php echo $class; ?>">
 				<input type="hidden" name="originHidden" value="<?php echo $origin; ?>">
 				<input type="hidden" name="destinationHidden" value="<?php echo $destination; ?>">
 				<input type="hidden" name="departHidden" value="<?php echo $depart; ?>">
 				<input type="hidden" name="returnHidden" value="<?php echo $return; ?>">
-				<input type="hidden" name="passengersHidden" value="<?php echo $noOfPassengers; ?>">
-				<input type="hidden" name="modeHidden" value="<?php echo "bus"; ?>">
+				<input type="hidden" name="adultsHidden" value="<?php echo $adults; ?>">
+				<input type="hidden" name="childrenHidden" value="<?php echo $children; ?>">
+				<input type="hidden" name="flightNoOutboundHidden" value="<?php echo $row["flight_no"]; ?>">
+				<input type="hidden" name="modeHidden" value="<?php echo "OneWayFlight" ?>">
 				
 				</form>
 				
@@ -325,7 +357,7 @@ if(!isset($_SESSION["username"]))
 		
 			<div class="noFlights">
 			
-				No bus found. Please consider modifying your search query.
+				No flights found. Please consider modifying your search query.
 			
 			</div>
 		

@@ -124,10 +124,6 @@ if(!isset($_SESSION["username"]))
 					$cabBookingsQuery = $conn->query($cabBookingsSQL);
 					$noOfCabBookings = $cabBookingsQuery->fetch_array(MYSQLI_NUM);
 				
-					$busBookingsSQL = "SELECT COUNT(*) FROM `busbookings` WHERE Username='$user' AND cancelled='no'";
-					$busBookingsQuery = $conn->query($busBookingsSQL);
-					$noOfBusBookings = $busBookingsQuery->fetch_array(MYSQLI_NUM);
-				
 					/*---------------------------------------------------------------------
 					
 					
@@ -286,76 +282,30 @@ if(!isset($_SESSION["username"]))
 				--------------------------------------------------------------------------------------------------->
 				
 				
-				<?php if($noOfBusBookings[0]>0): ?>
-					
-					
-					<!-------------------------------------------------------------------------------------------------
-					
-					
-													BUS TICKETS SECTION STARTS
-													
-													
-					--------------------------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------------------------
 				
-				<div class="col-sm-12 ticketTableContainer pullABitLeft" id="busTicketsWrapper">
-					
-						<table class="table table-responsive">
-							<thead>
-								<tr>
-									<th class="tableHeaderTags text-center" style="vertical-align: middle;">Id</th>
-									<th class="tableHeaderTags text-center" style="vertical-align: middle;">Origin</th>
-									<th class="tableHeaderTags text-center" style="vertical-align: middle;">Destination</th>
-									<th class="tableHeaderTags text-center" style="vertical-align: middle;">Date</th>
-									<th class="tableHeaderTags text-center" style="vertical-align: middle;">Ticket</th>
-								</tr>
-							</thead>
-							
-							<?php
-	
-								$busTicketsSQL = "SELECT * FROM `busbookings` WHERE username='$user' AND cancelled='no'";
-								$busTicketsQuery = $conn->query($busTicketsSQL);
 				
-								while($busTicketsRow = $busTicketsQuery->fetch_assoc()) { 
-									
-								?>
-								
-								<tr>
-									<td class="tableElementTagsNoHover text-center"><?php echo $busTicketsRow["bookingID"]; ?></td>
-									<td class="tableElementTagsNoHover text-center"><?php echo $busTicketsRow["origin"]; ?></td>
-									<td class="tableElementTagsNoHover text-center"><?php echo $busTicketsRow["destination"]; ?></td>
-									<td class="tableElementTagsNoHover text-center"><?php echo $busTicketsRow["date"]; ?></td>
-									<td class="text-center"><span class="fa fa-remove tableElementTags pullSpan cancelBusTicket"></span></td>
-								</tr>
-								
-							<?php } ?>
-					
-						</table>
-						
-				</div>
+												BUS TICKETS SECTION STARTS
+												
+												
+				--------------------------------------------------------------------------------------------------->
 				
-				<?php else: ?>
+				
 				
 				<div class="col-sm-12 ticketTableContainer" id="busTicketsWrapper">
 				
-					<div class="noBooking">
-					
-						Looks like you haven't booked any bus with us yet. This area will list all your bus bookings once you start booking buses.
-					
-					</div>
+					Here's the bus tickets
 				
 				</div>
 				
-				<?php endif; ?>
-				
-				
-				
 				<!-------------------------------------------------------------------------------------------------
-					
-					
-													BUS TICKETS SECTION ENDS
-													
-													
+				
+				
+												BUS TICKETS SECTION ENDS
+												
+												
 				--------------------------------------------------------------------------------------------------->
+				
 				
 				
 				<!-------------------------------------------------------------------------------------------------
