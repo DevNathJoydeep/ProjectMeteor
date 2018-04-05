@@ -42,7 +42,9 @@ if(!isset($_SESSION["username"]))
 				
                 $('#datetimepicker4').datetimepicker({
 					format: 'L',
-		   			locale: 'en-gb'
+		   			locale: 'en-gb',
+					useCurrent: false,
+					minDate: moment()
 				});
             });
 			
@@ -50,7 +52,8 @@ if(!isset($_SESSION["username"]))
 				
                 $('#datetimepicker7').datetimepicker({
 					format: 'LT',
-		   			locale: 'en-gb'
+		   			locale: 'en-gb',
+					minDate: moment()
 				});
             });
 		

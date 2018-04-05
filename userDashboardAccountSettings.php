@@ -132,13 +132,9 @@ if(!isset($_SESSION["username"]))
 					$busBookingsQuery = $conn->query($busBookingsSQL);
 					$noOfBusBookings = $busBookingsQuery->fetch_array(MYSQLI_NUM);
 				
-					/*---------------------------------------------------------------------
-					
-					
-					ADD SIMILAR SQL STATEMENTS TO COUNT NO. OF TRAINS, BUSES BOOKINGS
-					
-						
-					---------------------------------------------------------------------*/
+					$trainBookingsSQL = "SELECT COUNT(*) FROM `trainbookings` WHERE Username='$user'";
+					$trainBookingsQuery = $conn->query($trainBookingsSQL);
+					$noOfTrainBookings = $trainBookingsQuery->fetch_array(MYSQLI_NUM);
 				
 				?>
 				
@@ -148,7 +144,7 @@ if(!isset($_SESSION["username"]))
 					<span class="tag">No. of flight bookings: </span><span class="content"><?php echo $noOfFlightBookings[0]; ?> </span>
 					</div>
 					<div class="col-sm-6 settingsWrapper topMargin">
-					<span class="tag">No. of train bookings:  </span><span class="content text"><?php echo "0"?> </span>
+					<span class="tag">No. of train bookings:  </span><span class="content text"><?php echo $noOfTrainBookings[0];?> </span>
 					</div> <!-- change echo -->
 					<div class="col-sm-6 settingsWrapper">
 					<span class="tag">No. of bus bookings: </span><span class="content"><?php echo $noOfBusBookings[0]; ?> </span>

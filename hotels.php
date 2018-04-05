@@ -41,7 +41,9 @@ if(!isset($_SESSION["username"]))
 			$(function () {
        				$('#datetimepicker5').datetimepicker({
 		   			format: 'L',
-		   			locale: 'en-gb'
+		   			locale: 'en-gb',
+					useCurrent: false,
+					minDate: moment()
 	   				});
 				
         			$('#datetimepicker6').datetimepicker({

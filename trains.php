@@ -42,7 +42,14 @@ if(!isset($_SESSION["username"]))
 				
                 $('#datetimepicker3').datetimepicker({
 					format: 'L',
-		   			locale: 'en-gb'
+		   			locale: 'en-gb',
+					useCurrent: false,
+					minDate: moment()
+				});
+				
+				$('#datetimepicker3').on('dp.change',function(e){
+					console.log(e.date.format('dddd'));
+					$('#dayTrain').val(e.date.format('dddd'));
 				});
             });
 		
@@ -100,25 +107,19 @@ if(!isset($_SESSION["username"]))
    					
     					<div class="content">
     					
-    					<form>
+    					<form action="trainSearch.php" method="POST">
     					
     						<div class="col-sm-6">			
    							<div class="form-group">
    								 <label for="originTrain">Origin:<p> </p></label>
      
       								<select id= "originTrain"  data-live-search="true" class="selectpicker form-control" data-size="5" title="Select Origin Station" name="origin" required>
-       									<option value="New Delhi" data-subtext="DEL" data-tokens="DEL New Delhi">New Delhi</option>
-        								<option value="Mumbai" data-subtext="BOM" data-tokens="BOM Mumbai">Mumbai</option>
-        								<option value="Kolkata" data-subtext="CCU" data-tokens="CCU Kolkata">Kolkata</option>
-        								<option value="Bangalore" data-subtext="BLR" data-tokens="BLR Bangalore">Bangalore</option>
-        								<option value="Chennai" data-subtext="MAA" data-tokens="MAA Chennai">Chennai</option>
-        								<option value="Pune" data-subtext="PNQ" data-tokens="PNQ Pune">Pune</option>
-        								<option value="Goa" data-subtext="GOI" data-tokens="GOI Goa">Goa</option>
-        								<option value="Guwahati" data-subtext="GAU" data-tokens="GAU Guwahati">Guwahati</option>
-        								<option value="Gandhinagar" data-subtext="ISK" data-tokens="ISK Gandhinagar">Gandhinagar</option>
-        								<option value="Jammu" data-subtext="IXJ" data-tokens="IXJ Jammu">Jammu</option>
-        								<option value="Bhopal" data-subtext="BHO" data-tokens="BHI Bhopal">Bhopal</option>
-        								<option value="Agartala" data-subtext="IXA" data-tokens="IXA Agartala">Agartala</option>
+       									<option value="New Delhi" data-subtext="DLI" data-tokens="DLI New Delhi">New Delhi</option>
+        								<option value="Howrah" data-subtext="HWH" data-tokens="HWH Howrah">Howrah</option>
+        								<option value="New Jalpaiguri" data-subtext="NJP" data-tokens="NJP New Jalpaiguri">New Jalpaiguri</option>
+       									<option value="Guwahati" data-subtext="GHY" data-tokens="GHY Guwahati">Guwahati</option>
+        								<option value="Silchar" data-subtext="SCL" data-tokens="SCL Silchar">Silchar</option>
+        								<option value="Dimapur" data-subtext="DMV" data-tokens="DMV Dimapur">Dimapur</option>
       								</select>
 							</div>
             			</div>
@@ -128,18 +129,12 @@ if(!isset($_SESSION["username"]))
    								 <label for="destinationTrain">Destination:<p> </p></label>
      
       								<select id= "destinationTrain"  data-live-search="true" class="selectpicker form-control" data-size="5" title="Select Destination Station" name="destination" required>
-       									<option value="New Delhi" data-subtext="DEL" data-tokens="DEL New Delhi">New Delhi</option>
-        								<option value="Mumbai" data-subtext="BOM" data-tokens="BOM Mumbai">Mumbai</option>
-        								<option value="Kolkata" data-subtext="CCU" data-tokens="CCU Kolkata">Kolkata</option>
-        								<option value="Bangalore" data-subtext="BLR" data-tokens="BLR Bangalore">Bangalore</option>
-        								<option value="Chennai" data-subtext="MAA" data-tokens="MAA Chennai">Chennai</option>
-        								<option value="Pune" data-subtext="PNQ" data-tokens="PNQ Pune">Pune</option>
-        								<option value="Goa" data-subtext="GOI" data-tokens="GOI Goa">Goa</option>
-        								<option value="Guwahati" data-subtext="GAU" data-tokens="GAU Guwahati">Guwahati</option>
-        								<option value="Gandhinagar" data-subtext="ISK" data-tokens="ISK Gandhinagar">Gandhinagar</option>
-        								<option value="Jammu" data-subtext="IXJ" data-tokens="IXJ Jammu">Jammu</option>
-        								<option value="Bhopal" data-subtext="BHO" data-tokens="BHI Bhopal">Bhopal</option>
-        								<option value="Agartala" data-subtext="IXA" data-tokens="IXA Agartala">Agartala</option>
+       									<option value="New Delhi" data-subtext="DLI" data-tokens="DLI New Delhi">New Delhi</option>
+        								<option value="Howrah" data-subtext="HWH" data-tokens="HWH Howrah">Howrah</option>
+        								<option value="New Jalpaiguri" data-subtext="NJP" data-tokens="NJP New Jalpaiguri">New Jalpaiguri</option>
+       									<option value="Guwahati" data-subtext="GHY" data-tokens="GHY Guwahati">Guwahati</option>
+        								<option value="Silchar" data-subtext="SCL" data-tokens="SCL Silchar">Silchar</option>
+        								<option value="Dimapur" data-subtext="DMV" data-tokens="DMV Dimapur">Dimapur</option>
       								</select>
 							</div>
             			</div>
@@ -161,11 +156,11 @@ if(!isset($_SESSION["username"]))
 							<label for="class">Select Class: <p> </p></label>
     							<div class="form-group">
     								<select id= "class" class="selectpicker form-control" data-size="5" title="Select Class" name="class" required>
-  										<option>First AC</option>
-  										<option>Second AC</option>
-  										<option>Third AC</option>
-  										<option>Sleeper</option>
-  										<option>AC Chair Car</option>
+  										<option value="1AC">First AC</option>
+  										<option value="2AC">Second AC</option>
+  										<option value="3AC">Third AC</option>
+  										<option value="SL">Sleeper</option>
+  										<option value="CC">AC Chair Car</option>
 									</select>
 								</div>
 							</div>
@@ -200,6 +195,8 @@ if(!isset($_SESSION["username"]))
 									</select>
 								</div>
 							</div>
+           			
+           					<input type="hidden" name="day" value="null" id="dayTrain"/>
             			
             				<div class="col-sm-12 text-center">
             			

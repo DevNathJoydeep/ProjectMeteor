@@ -128,13 +128,9 @@ if(!isset($_SESSION["username"]))
 					$busBookingsQuery = $conn->query($busBookingsSQL);
 					$noOfBusBookings = $busBookingsQuery->fetch_array(MYSQLI_NUM);
 				
-					/*---------------------------------------------------------------------
-					
-					
-					   ADD SIMILAR SQL STATEMENTS TO COUNT NO. OF TRAIN BOOKINGS
-					
-						
-					---------------------------------------------------------------------*/
+					$trainBookingsSQL = "SELECT COUNT(*) FROM `trainbookings` WHERE Username='$user' AND cancelled='no'";
+					$trainBookingsQuery = $conn->query($trainBookingsSQL);
+					$noOfTrainBookings = $trainBookingsQuery->fetch_array(MYSQLI_NUM);
 				
 				?>
 				
@@ -242,23 +238,51 @@ if(!isset($_SESSION["username"]))
 				--------------------------------------------------------------------------------------------------->
 				
 				
-				<?php if(1==2): ?> <!-- change the condition -->
+				<?php if($noOfTrainBookings[0]>0): ?>
 					
 					
-				<!-------------------------------------------------------------------------------------------------
+					<!-------------------------------------------------------------------------------------------------
+					
+					
+													TRAIN TICKETS SECTION STARTS
+													
+													
+					--------------------------------------------------------------------------------------------------->
 				
+				<div class="col-sm-12 ticketTableContainer pullABitLeft" id="trainTicketsWrapper">
+					
+						<table class="table table-responsive">
+							<thead>
+								<tr>
+									<th class="tableHeaderTags text-center" style="vertical-align: middle;">Id</th>
+									<th class="tableHeaderTags text-center" style="vertical-align: middle;">Origin</th>
+									<th class="tableHeaderTags text-center" style="vertical-align: middle;">Destination</th>
+									<th class="tableHeaderTags text-center" style="vertical-align: middle;">Date</th>
+									<th class="tableHeaderTags text-center" style="vertical-align: middle;">Ticket</th>
+								</tr>
+							</thead>
+							
+							<?php
+	
+								$trainTicketsSQL = "SELECT * FROM `trainbookings` WHERE username='$user' AND cancelled='no'";
+								$trainTicketsQuery = $conn->query($trainTicketsSQL);
 				
-												TRAIN TICKETS SECTION STARTS
-												
-												
-				--------------------------------------------------------------------------------------------------->
-				
-				
-				
-				<div class="col-sm-12 ticketTableContainer" id="trainTicketsWrapper">
-				
-					Here's the train tickets
-				
+								while($trainTicketsRow = $trainTicketsQuery->fetch_assoc()) { 
+									
+								?>
+								
+								<tr>
+									<td class="tableElementTagsNoHover text-center"><?php echo $trainTicketsRow["bookingID"]; ?></td>
+									<td class="tableElementTagsNoHover text-center"><?php echo $trainTicketsRow["origin"]; ?></td>
+									<td class="tableElementTagsNoHover text-center"><?php echo $trainTicketsRow["destination"]; ?></td>
+									<td class="tableElementTagsNoHover text-center"><?php echo $trainTicketsRow["date"]; ?></td>
+									<td class="text-center"><span class="fa fa-remove tableElementTags pullSpan cancelTrainTicket"></span></td>
+								</tr>
+								
+							<?php } ?>
+					
+						</table>
+						
 				</div>
 				
 				<?php else: ?>

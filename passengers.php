@@ -44,29 +44,33 @@ if(!isset($_SESSION["username"]))
 		
 			$fare=$_POST["fareHidden"];
 			$mode=$_POST["modeHidden"];
-			$type=$_POST["typeHidden"];
-			$class=$_POST["classHidden"];
-			$origin=$_POST["originHidden"];
-			$destination=$_POST["destinationHidden"];
-			$depart=$_POST["departHidden"];
-			$return=$_POST["returnHidden"];
-			$adults=$_POST["adultsHidden"];
-			$children=$_POST["childrenHidden"];
-			$noOfPassengers=(int)$adults+(int)$children;
 		
-			if($type=="Return Trip") {
-				$flightNoOutbound=$_POST["flightNoOutboundHidden"];
-				$flightNoInbound=$_POST["flightNoInboundHidden"];
+			if($mode=="OneWayFlight" || $mode=="ReturnTripFlight") {
+		
+				$type=$_POST["typeHidden"];
+				$class=$_POST["classHidden"];
+				$origin=$_POST["originHidden"];
+				$destination=$_POST["destinationHidden"];
+				$depart=$_POST["departHidden"];
+				$return=$_POST["returnHidden"];
+				$adults=$_POST["adultsHidden"];
+				$children=$_POST["childrenHidden"];
+				$noOfPassengers=(int)$adults+(int)$children;
+			
+				if($type=="Return Trip") {
+					$flightNoOutbound=$_POST["flightNoOutboundHidden"];
+					$flightNoInbound=$_POST["flightNoInboundHidden"];
+				}
+				elseif($type=="One Way") {
+					$flightNoOutbound=$_POST["flightNoOutboundHidden"];
+				}
+			
+				if($class=="Economy Class")
+					$className="Economy";
+				else
+					$className="Business";
+				
 			}
-			elseif($type=="One Way") {
-				$flightNoOutbound=$_POST["flightNoOutboundHidden"];
-			}
-		
-			if($class=="Economy Class")
-				$className="Economy";
-			else
-				$className="Business";
-		
 		
 			if($mode=="bus") {
 				$date = $_POST["dateHidden"];
@@ -74,6 +78,16 @@ if(!isset($_SESSION["username"]))
 				$totalPassengers=$_POST["noOfPassengersHidden"];
 				$origin=$_POST["originHidden"];
 				$destination=$_POST["destinationHidden"];
+			}
+		
+			if($mode=="train") {
+				$date = $_POST["dateHidden"];
+				$day = $_POST["dayHidden"];
+				$trainID = $_POST["trainIDHidden"];
+				$totalPassengers=$_POST["noOfPassengersHidden"];
+				$origin=$_POST["originHidden"];
+				$destination=$_POST["destinationHidden"];
+				$class=$_POST["classHidden"];
 			}
 		
 		?>
@@ -133,11 +147,22 @@ if(!isset($_SESSION["username"]))
 							<input type="hidden" name="busIDHidden" value="<?php echo $busID; ?>">
 						<?php } ?>
 						
+						<?php if($mode="train") { ?>
+							<input type="hidden" name="dateHidden" value="<?php echo $date; ?>">
+							<input type="hidden" name="dayHidden" value="<?php echo $day; ?>">
+							<input type="hidden" name="classHidden" value="<?php echo $class; ?>">
+							<input type="hidden" name="trainIDHidden" value="<?php echo $trainID; ?>">
+						<?php } ?>
+						
+						<?php if($mode=="OneWayFlight" || $mode=="ReturnTripFlight") { ?>
+						
 						<?php if($type=="Return Trip") { ?>
 						<input type="hidden" name="flightNoOutboundHidden" value="<?php echo $flightNoOutbound; ?>">
 						<input type="hidden" name="flightNoInboundHidden" value="<?php echo $flightNoInbound; ?>">
 						<?php } elseif($type=="One Way") { ?>
 						<input type="hidden" name="flightNoOutboundHidden" value="<?php echo $flightNoOutbound; ?>">
+						<?php } ?>
+						
 						<?php } ?>
 					
 					</form>

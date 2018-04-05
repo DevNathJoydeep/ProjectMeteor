@@ -100,9 +100,23 @@ if(!isset($_SESSION["username"]))
 					$name[$i]=$_POST["name$i"];
 					$gender[$i]=$_POST["gender$i"];
 				}
-			} //for hotels
+			} //for bus
 		
-			// add conditions for buses, trains here
+			elseif($mode=="train") {
+				$totalPassengers=$_POST["totalPassengersHidden"];
+				$fare=$_POST["fareHidden"];
+				$trainID=$_POST["trainIDHidden"];
+				$origin=$_POST["originHidden"];
+				$destination=$_POST["destinationHidden"];
+				$date=$_POST["dateHidden"];
+				$day=$_POST["dayHidden"];
+				$class=$_POST["classHidden"];
+				
+				for($i=1; $i<=$totalPassengers; $i++) {
+					$name[$i]=$_POST["name$i"];
+					$gender[$i]=$_POST["gender$i"];
+				}
+			} //for train
 		
 		?>
 		
@@ -271,6 +285,37 @@ if(!isset($_SESSION["username"]))
 					<?php } ?>
 					
 					<input type="hidden" name="busIDHidden" value="<?php echo $busID; ?>">
+					
+				</form>
+				
+				<?php elseif($mode=="train"): ?>
+				
+				<form action="generateTrainTicket.php" method="POST">
+				
+					<div class="col-sm-12 bookingButton text-center">
+						
+						<?php $date=$_POST["dateHidden"]; ?>
+					
+						<input type="hidden" name="dateHidden" value="<?php echo $date; ?>">
+						<input type="hidden" name="dayHidden" value="<?php echo $day; ?>">
+						<input type="hidden" name="classHidden" value="<?php echo $class; ?>">
+						<input type="submit" class="paymentButton" value="Pay Now">
+					</div>
+					
+					<input type="hidden" name="totalPassengersHidden" value="<?php echo $totalPassengers; ?>">
+					<input type="hidden" name="fareHidden" value="<?php echo $fare; ?>">
+					<input type="hidden" name="originHidden" value="<?php echo $origin; ?>">
+					<input type="hidden" name="destinationHidden" value="<?php echo $destination; ?>">
+					<input type="hidden" name="modeHidden" value="<?php echo $mode ?>">
+					
+					<?php for($i=1; $i<=$totalPassengers; $i++) {?>
+					
+						<input type="hidden" name="nameHidden<?php echo $i; ?>" value="<?php echo $name[$i]; ?>">
+						<input type="hidden" name="genderHidden<?php echo $i; ?>" value="<?php echo $gender[$i]; ?>">
+					
+					<?php } ?>
+					
+					<input type="hidden" name="trainIDHidden" value="<?php echo $trainID; ?>">
 					
 				</form>
 				

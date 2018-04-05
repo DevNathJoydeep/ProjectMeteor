@@ -128,13 +128,9 @@ if(!isset($_SESSION["username"]))
 					$busBookingsQuery = $conn->query($busBookingsSQL);
 					$noOfBusBookings = $busBookingsQuery->fetch_array(MYSQLI_NUM);
 				
-					/*---------------------------------------------------------------------
-					
-					
-					ADD SIMILAR SQL STATEMENTS TO COUNT NO. OF TRAINS, BUSES, CABS BOOKINGS
-												AND HOTELS
-						
-					---------------------------------------------------------------------*/
+					$trainBookingsSQL = "SELECT COUNT(*) FROM `trainbookings` WHERE username='$user' AND cancelled='no'";
+					$trainBookingsQuery = $conn->query($trainBookingsSQL);
+					$noOfTrainBookings = $trainBookingsQuery->fetch_array(MYSQLI_NUM);
 				
 				?>
 				
@@ -151,7 +147,7 @@ if(!isset($_SESSION["username"]))
 					<select class="input" name="ticketTypeSelector" id="ticketTypeSelector"/>
 						
 						<option value="flightTickets">Flight Tickets (<?php echo $noOfFlightBookings[0]; ?>)</option>
-						<option value="trainTickets">Train Tickets (<?php echo "0" ?>)</option> <!-- change echo -->
+						<option value="trainTickets">Train Tickets (<?php echo $noOfTrainBookings[0]; ?>)</option> <!-- change echo -->
 						<option value="busTickets">Bus Tickets (<?php echo $noOfBusBookings[0] ?>)</option> <!-- change echo -->
 						<option value="cabTickets">Cab Tickets (<?php echo $noOfCabBookings[0] ?>)</option> <!-- change echo -->
 						
@@ -242,23 +238,51 @@ if(!isset($_SESSION["username"]))
 				--------------------------------------------------------------------------------------------------->
 				
 				
-				<?php if(1==2): ?> <!-- change the condition -->
+				<?php if($noOfTrainBookings[0]>0): ?>
 					
 					
-				<!-------------------------------------------------------------------------------------------------
+					<!-------------------------------------------------------------------------------------------------
+					
+					
+													TRAIN TICKETS SECTION STARTS
+													
+													
+					--------------------------------------------------------------------------------------------------->
 				
+				<div class="col-sm-12 ticketTableContainer pullABitLeft" id="trainTicketsWrapper">
+					
+						<table class="table table-responsive">
+							<thead>
+								<tr>
+									<th class="tableHeaderTags text-center" style="vertical-align: middle;">Id</th>
+									<th class="tableHeaderTags text-center" style="vertical-align: middle;">Origin</th>
+									<th class="tableHeaderTags text-center" style="vertical-align: middle;">Destination</th>
+									<th class="tableHeaderTags text-center" style="vertical-align: middle;">Date</th>
+									<th class="tableHeaderTags text-center" style="vertical-align: middle;">Ticket</th>
+								</tr>
+							</thead>
+							
+							<?php
+	
+								$trainTicketsSQL = "SELECT * FROM `trainbookings` WHERE username='$user' AND cancelled='no'";
+								$trainTicketsQuery = $conn->query($trainTicketsSQL);
 				
-												TRAIN TICKETS SECTION STARTS
-												
-												
-				--------------------------------------------------------------------------------------------------->
-				
-				
-				
-				<div class="col-sm-12 ticketTableContainer" id="trainTicketsWrapper">
-				
-					Here's the train tickets
-				
+								while($trainTicketsRow = $trainTicketsQuery->fetch_assoc()) { 
+									
+								?>
+								
+								<tr>
+									<td class="tableElementTagsNoHover text-center"><?php echo $trainTicketsRow["bookingID"]; ?></td>
+									<td class="tableElementTagsNoHover text-center"><?php echo $trainTicketsRow["origin"]; ?></td>
+									<td class="tableElementTagsNoHover text-center"><?php echo $trainTicketsRow["destination"]; ?></td>
+									<td class="tableElementTagsNoHover text-center"><?php echo $trainTicketsRow["date"]; ?></td>
+									<td class="text-center"><a href="tickets/trainTicket<?php echo $trainTicketsRow["bookingID"]; ?>.html" target="_blank"><span class="fa fa-download tableElementTags pullSpan"></span></a></td>
+								</tr>
+								
+							<?php } ?>
+					
+						</table>
+						
 				</div>
 				
 				<?php else: ?>
@@ -284,7 +308,6 @@ if(!isset($_SESSION["username"]))
 													
 													
 				--------------------------------------------------------------------------------------------------->
-				
 				
 				
 					<?php if($noOfBusBookings[0]>0): ?>
@@ -353,7 +376,7 @@ if(!isset($_SESSION["username"]))
 				<!-------------------------------------------------------------------------------------------------
 					
 					
-													FLIGHT TICKETS SECTION ENDS
+													BUS TICKETS SECTION ENDS
 													
 													
 				--------------------------------------------------------------------------------------------------->
