@@ -1,11 +1,3 @@
-<?php session_start();
-if(!isset($_SESSION["username"]))
-{
-    	header("Location:blockedBooking.php");
-   		$_SESSION['url'] = $_SERVER['REQUEST_URI']; 
-}
-?>
-
 <!DOCTYPE html>
 
 <html lang="en">
@@ -36,23 +28,18 @@ if(!isset($_SESSION["username"]))
     	<script src="js/jquery-2.1.1.min.js"></script>
     	<script src="js/moment-with-locales.js"></script>
     	<script src="js/bootstrap-datetimepicker.js"></script>
-    	<script src="js/scrolling-nav.js"></script>
-    	<script src="js/jquery.easing.min.js"></script>
 		<script type="text/javascript">
 		
 			$(function () {
        				$('#datetimepicker1').datetimepicker({
 		   			format: 'L',
-		   			locale: 'en-gb',
-					useCurrent: false,
-					minDate: moment()
+		   			locale: 'en-gb'
 	   				});
 				
         			$('#datetimepicker2').datetimepicker({
             		useCurrent: false,
 					format: 'L',
-					locale: 'en-gb',
-					minDate: moment()
+					locale: 'en-gb'
 					});
 				
 					$("#datetimepicker1").on("dp.change", function (e) {
@@ -74,7 +61,7 @@ if(!isset($_SESSION["username"]))
 	
 	<body>
 	
-		<div class="container-fluid" id="book">
+		<div class="container-fluid">
 		
 			<div class="flights col-sm-12">
 			
@@ -84,7 +71,25 @@ if(!isset($_SESSION["username"]))
 					
 					<div class="header">
 					
-						<?php include("common/headerTransparentLoggedIn.php"); ?>
+						<div class="col-sm-4">
+					
+						<div class="logo"></div>
+						
+					</div>
+					
+						<div class="col-sm-8">
+					
+						<div class="headerMenu">
+							
+							<ul>
+								<li>Home</li>
+								<li>About Us</li>
+								<a href="login.php"><li>Login</li></a>
+								<li>Contact Us</li>
+							</ul>
+							
+						</div>
+					</div>
 					
 						<div class="col-sm-12">
 						
@@ -148,18 +153,19 @@ if(!isset($_SESSION["username"]))
    							<div class="form-group">
    								 <label for="origin">Origin:<p> </p></label>
      
-      								<select id= "origin"  data-live-search="true" class="selectpicker form-control" data-size="5" title="Select Origin" name="origin" required>
+      								<select id= "origin"  data-live-search="true" class="selectpicker form-control" data-size="5" title="Select Origin" name="origin">
        									<option value="New Delhi" data-subtext="DEL" data-tokens="DEL New Delhi">New Delhi</option>
         								<option value="Mumbai" data-subtext="BOM" data-tokens="BOM Mumbai">Mumbai</option>
         								<option value="Kolkata" data-subtext="CCU" data-tokens="CCU Kolkata">Kolkata</option>
-        								<option value="Bengaluru" data-subtext="BLR" data-tokens="BLR Bengaluru">Bengaluru</option>
-        								<option value="Pune" data-subtext="PNQ" data-tokens="PNQ Pune">Pune</option>
+        								<option value="Bangalore" data-subtext="BLR" data-tokens="BLR Bangalore">Bangalore</option>
         								<option value="Chennai" data-subtext="MAA" data-tokens="MAA Chennai">Chennai</option>
+        								<option value="Pune" data-subtext="PNQ" data-tokens="PNQ Pune">Pune</option>
+        								<option value="Goa" data-subtext="GOI" data-tokens="GOI Goa">Goa</option>
         								<option value="Guwahati" data-subtext="GAU" data-tokens="GAU Guwahati">Guwahati</option>
+        								<option value="Gandhinagar" data-subtext="ISK" data-tokens="ISK Gandhinagar">Gandhinagar</option>
+        								<option value="Jammu" data-subtext="IXJ" data-tokens="IXJ Jammu">Jammu</option>
         								<option value="Bhopal" data-subtext="BHO" data-tokens="BHI Bhopal">Bhopal</option>
-        								<option value="Jaipur" data-subtext="JAI" data-tokens="JAI Jaipur">Jaipur</option>
-        								<option value="Ahmedabad" data-subtext="AMD" data-tokens="AMD Ahmedabad">Ahmedabad</option>
-        								<option value="Hyderabad" data-subtext="HYD" data-tokens="HYD Hyderabad">Hyderabad</option>
+        								<option value="Agartala" data-subtext="IXA" data-tokens="IXA Agartala">Agartala</option>
       								</select>
 							</div>
             			</div>
@@ -168,18 +174,19 @@ if(!isset($_SESSION["username"]))
    							<div class="form-group">
    								 <label for="destination">Destination:<p> </p></label>
      
-      								<select id= "destination"  data-live-search="true" class="selectpicker form-control" data-size="5" title="Select Destination" name="destination" required>
+      								<select id= "destination"  data-live-search="true" class="selectpicker form-control" data-size="5" title="Select Destination" name="destination">
        									<option value="New Delhi" data-subtext="DEL" data-tokens="DEL New Delhi">New Delhi</option>
         								<option value="Mumbai" data-subtext="BOM" data-tokens="BOM Mumbai">Mumbai</option>
         								<option value="Kolkata" data-subtext="CCU" data-tokens="CCU Kolkata">Kolkata</option>
-        								<option value="Bengaluru" data-subtext="BLR" data-tokens="BLR Bengaluru">Bengaluru</option>
-        								<option value="Pune" data-subtext="PNQ" data-tokens="PNQ Pune">Pune</option>
+        								<option value="Bangalore" data-subtext="BLR" data-tokens="BLR Bangalore">Bangalore</option>
         								<option value="Chennai" data-subtext="MAA" data-tokens="MAA Chennai">Chennai</option>
+        								<option value="Pune" data-subtext="PNQ" data-tokens="PNQ Pune">Pune</option>
+        								<option value="Goa" data-subtext="GOI" data-tokens="GOI Goa">Goa</option>
         								<option value="Guwahati" data-subtext="GAU" data-tokens="GAU Guwahati">Guwahati</option>
+        								<option value="Gandhinagar" data-subtext="ISK" data-tokens="ISK Gandhinagar">Gandhinagar</option>
+        								<option value="Jammu" data-subtext="IXJ" data-tokens="IXJ Jammu">Jammu</option>
         								<option value="Bhopal" data-subtext="BHO" data-tokens="BHI Bhopal">Bhopal</option>
-        								<option value="Jaipur" data-subtext="JAI" data-tokens="JAI Jaipur">Jaipur</option>
-        								<option value="Ahmedabad" data-subtext="AMD" data-tokens="AMD Ahmedabad">Ahmedabad</option>
-        								<option value="Hyderabad" data-subtext="HYD" data-tokens="HYD Hyderabad">Hyderabad</option>
+        								<option value="Agartala" data-subtext="IXA" data-tokens="IXA Agartala">Agartala</option>
       								</select>
 							</div>
             			</div>
@@ -188,7 +195,7 @@ if(!isset($_SESSION["username"]))
         						<div class="form-group">
      								<label for="datetime1">Select Departure Date:<p> </p></label>
             						<div class="input-group date" id="datetimepicker1">
-                						<input id="datetime1" type="text" class="inputDate form-control" placeholder="Select Departure Date" name="depart" required/>
+                						<input id="datetime1" type="text" class="inputDate form-control" placeholder="Select Departure Date" name="depart"/>
                 						<span class="input-group-addon">
                    						<span class="fa fa-calendar"></span>
                 						</span>
@@ -200,7 +207,7 @@ if(!isset($_SESSION["username"]))
        							<div class="form-group">
            							<label for="datetime2">Select Return Date:<p> </p></label>
             						<div class="input-group date" id="datetimepicker2">
-                							<input  id="datetime2" type="text" class="inputDate form-control" placeholder="Select Return Date" name="return" required/>
+                							<input  id="datetime2" type="text" class="inputDate form-control" placeholder="Select Return Date" name="return"/>
                 							<span class="input-group-addon">
                     						<span class="fa fa-calendar"></span>
                 					</span>
@@ -212,7 +219,7 @@ if(!isset($_SESSION["username"]))
 	
 							<label for="adults">No. of adults:<p> </p></label>
     							<div class="form-group">
-    								<select id= "adults" class="selectpicker form-control" data-size="5" title="Aged 18 and above" name="adults" required>
+    								<select id= "adults" class="selectpicker form-control" data-size="5" title="Aged 18 and above" name="adults">
   										<option value="1">1</option>
   										<option value="2">2</option>
   										<option value="3">3</option>
@@ -227,7 +234,7 @@ if(!isset($_SESSION["username"]))
 							
 							<label for="children">No. of children:<p> </p></label>
 								<div class="form-group">
-   									<select id= "children" class="selectpicker form-control" data-size="5" title="Aged upto 17" name="children" required>
+   									<select id= "children" class="selectpicker form-control" data-size="5" title="Aged upto 17" name="children">
   										<option value="0">0</option>
   										<option value="1">1</option>
   										<option value="2">2</option>
@@ -273,31 +280,6 @@ if(!isset($_SESSION["username"]))
 						
 						<div class="bg">
 						
-						<?php
-		
-							$servername = "localhost";
-							$username = "root";
-							$password = "";
-							$dbname = "projectmeteor";
-							
-							// Creating a connection to projectmeteor MySQL database
-							$conn = new mysqli($servername, $username, $password, $dbname);
-							
-							// Checking if we've successfully connected to the database
-							if ($conn->connect_error) {
-								die("Connection failed: " . $conn->connect_error);
-							}
-							
-							$popularFlightsSQL = "SELECT * FROM `flights` ORDER BY `noOfBookings` DESC LIMIT 3";
-							$popularFlightsQuery = $conn->query($popularFlightsSQL);
-							//$popularFlightsArray = $popularFlightsQuery->fetch_array(MYSQLI_NUM);
-							
-    						while($row = $popularFlightsQuery->fetch_assoc()) {
-								
-								$operator=$row["operator"];
-							
-						?>
-						
 							<!-- replace listItems below by PHP loops -->
 						
 							<div class="listItem">
@@ -314,37 +296,7 @@ if(!isset($_SESSION["username"]))
 		
 									<div class="operatorLogo text-center">
 			
-										<?php if($operator=="IndiGo"): ?>
-				
 										<img src="images/flights/operatorLogos/indigo.jpg">
-										
-										<?php elseif($operator=="AirIndia"): ?>
-										
-										<img src="images/flights/operatorLogos/airindia.jpg">
-										
-										<?php elseif($operator=="Vistara"): ?>
-										
-										<img src="images/flights/operatorLogos/vistara.jpg">
-										
-										<?php elseif($row["operator"]=="Jet Airways"): ?>
-							
-										<img src="images/flights/operatorLogos/jetairways.jpg">
-										
-										<?php elseif($row["operator"]=="Spicejet"): ?>
-										
-										<img src="images/flights/operatorLogos/spicejet.jpg">
-										
-										<?php elseif($row["operator"]=="GoAir"): ?>
-										
-										<img src="images/flights/operatorLogos/goair.jpg">
-							
-										<?php elseif($row["operator"]=="AirAsia"): ?>
-										
-										<img src="images/flights/operatorLogos/airasia.jpg">
-										
-										<?php endif; ?>
-										
-										<!-- ADD OTHER OPERATORS HERE -->
 			
 									</div>
 		
@@ -365,13 +317,13 @@ if(!isset($_SESSION["username"]))
 		
 									<div class="values origin">
 		
-										<?php echo $row["origin"]; ?>
+										Mumbai
 			
 									</div>
 		
 									<div class="originSubscript">
 		
-										<?php echo $row["origin_code"]; ?>
+										BOM
 			
 									</div>
 		
@@ -392,13 +344,13 @@ if(!isset($_SESSION["username"]))
 		
 									<div class="values destination">
 		
-										<?php echo $row["destination"]; ?>
+										Kolkata
 			
 									</div>
 		
 									<div class="destinationSubscript">
 		
-										<?php echo $row["destination_code"]; ?>
+										CCU
 			
 									</div>
 		
@@ -421,13 +373,13 @@ if(!isset($_SESSION["username"]))
 		
 										<div class="departure">
 											
-											<?php echo $row["departs"]; ?>
+											19:40
 											
 										</div>
 										
 										<div class="arrival">
 											
-											<?php echo $row["arrives"]; ?>
+											22:25
 											
 										</div>
 		
@@ -450,7 +402,7 @@ if(!isset($_SESSION["username"]))
 		
 									<div class="values fare">
 		
-										<?php echo $row["fare"]; ?>
+										4,013
 			
 									</div>
 		
@@ -466,25 +418,8 @@ if(!isset($_SESSION["username"]))
 	
 	
 									<!-- AVAILABILITY STARTS -->
-									
-								<?php
-				
-								$flightNo = $row["flight_no"];
-									
-								$getSeatsAvailableSQL = "SELECT seats_available FROM `flights` WHERE flight_no='$flightNo'";
-								$getSeatsAvailableQuery = $conn->query($getSeatsAvailableSQL);
-								$SeatsAvailableGet = $getSeatsAvailableQuery ->fetch_array(MYSQLI_NUM);
-							
-								$seatsAvailable = $SeatsAvailableGet[0];
-								
-								?>
-			
-								<!-- allowing only those flights to be booked which have enough seats -->
-				
-								<?php if($seatsAvailable>0): ?>
-					
-								<div class="col-sm-2 text-center" style="border-right: none;">
-								<!-- try to remove the inline css -->
+	
+								<div class="col-sm-2 text-center">
 	
 									<div class="headings">
 		
@@ -494,52 +429,347 @@ if(!isset($_SESSION["username"]))
 		
 									<div class="values availabilityGreen">
 		
-										<?php echo $row["seats_available"]; ?>
+										Available
 			
 									</div>
 		
 									<div class="availabilitySubscript">
 		
-										<a class="page-scroll" href="#book">
 										<input type="submit" class="availabilityBookingButton" value="Book Now">
-										</a>
 			
 									</div>
 		
 								</div>
-								
-								<?php else:  ?>
-								
-								<div class="col-sm-2 text-center" style="border-right: none;">
-								<!-- try to remove the inline css -->
-									
+	
+									<!-- AVAILABILITY ENDS -->
+				
+							</div> <!-- listItem 1 -->
+							
+							<div class="listItem">
+													
+								<!-- OPERATOR STARTS -->
+
+								<div class="col-sm-2 text-center">
+	
+									<div class="headings">
+		
+										Operator
+			
+									</div>
+		
+									<div class="operatorLogo text-center">
+			
+										<img src="images/flights/operatorLogos/vistara.jpg">
+			
+									</div>
+		
+								</div>
+	
+								<!-- OPERATOR ENDS -->
+	
+	
+								<!-- ORIGIN STARTS -->
+
+								<div class="col-sm-2 text-center">
+	
+									<div class="headings">
+		
+										Origin
+			
+									</div>
+		
+									<div class="values origin">
+		
+										New Delhi
+			
+									</div>
+		
+									<div class="originSubscript">
+		
+										DEL
+			
+									</div>
+		
+								</div>
+	
+									<!-- ORIGIN ENDS -->
+	
+	
+									<!-- DESTINATION STARTS -->
+	
+								<div class="col-sm-2 text-center">
+	
+									<div class="headings">
+		
+										Destination
+			
+									</div>
+		
+									<div class="values destination">
+		
+										Chennai
+			
+									</div>
+		
+									<div class="destinationSubscript">
+		
+										MAA
+			
+									</div>
+		
+								</div>
+	
+									<!-- DESTINATION ENDS -->
+	
+	
+									<!-- TIME STARTS -->
+
+								<div class="col-sm-2 text-center">
+	
+									<div class="headings">
+		
+										Time
+			
+									</div>
+		
+									<div class="values time">
+		
+										<div class="departure">
+											
+											06:05
+											
+										</div>
+										
+										<div class="arrival">
+											
+											08:45
+											
+										</div>
+		
+									</div>
+		
+								</div>
+	
+									<!-- TIME ENDS -->
+	
+	
+									<!-- FARE STARTS -->
+	
+								<div class="col-sm-2 text-center">
+	
+									<div class="headings">
+		
+										Fare
+			
+									</div>
+		
+									<div class="values fare">
+		
+										3,596
+			
+									</div>
+		
+									<div class="fareSubscript">
+		
+										incl. of GST
+			
+									</div>
+		
+								</div>
+	
+									<!-- FARE ENDS -->
+	
+	
+									<!-- AVAILABILITY STARTS -->
+	
+								<div class="col-sm-2 text-center">
+	
 									<div class="headings">
 		
 										Availability
 			
 									</div>
-
-									<div class="values availabilityRed">
-				
-										Unavailable
-					
+		
+									<div class="values availabilityGreen">
+		
+										Available
+			
 									</div>
-				
-									<div class="unavailabilitySubscript">
-				
-										Sold Out
-					
+		
+									<div class="availabilitySubscript">
+		
+										<input type="submit" class="availabilityBookingButton" value="Book Now">
+			
 									</div>
-
+		
 								</div>
-				
-								<?php endif;?>
 	
 									<!-- AVAILABILITY ENDS -->
 				
-							</div> <!-- listItem -->
+							</div> <!-- listItem 2 -->
 							
-						<?php } ?>
+							<div class="listItem">
+													
+								<!-- OPERATOR STARTS -->
+
+								<div class="col-sm-2 text-center">
+	
+									<div class="headings">
+		
+										Operator
+			
+									</div>
+		
+									<div class="operatorLogo text-center">
+			
+										<img src="images/flights/operatorLogos/airindia.jpg">
+			
+									</div>
+		
+								</div>
+	
+								<!-- OPERATOR ENDS -->
+	
+	
+								<!-- ORIGIN STARTS -->
+
+								<div class="col-sm-2 text-center">
+	
+									<div class="headings">
+		
+										Origin
+			
+									</div>
+		
+									<div class="values origin">
+		
+										Bengaluru
+			
+									</div>
+		
+									<div class="originSubscript">
+		
+										BLR
+			
+									</div>
+		
+								</div>
+	
+									<!-- ORIGIN ENDS -->
+	
+	
+									<!-- DESTINATION STARTS -->
+	
+								<div class="col-sm-2 text-center">
+	
+									<div class="headings">
+		
+										Destination
+			
+									</div>
+		
+									<div class="values destination">
+		
+										New Delhi
+			
+									</div>
+		
+									<div class="destinationSubscript">
+		
+										DEL
+			
+									</div>
+		
+								</div>
+	
+									<!-- DESTINATION ENDS -->
+	
+	
+									<!-- TIME STARTS -->
+
+								<div class="col-sm-2 text-center">
+	
+									<div class="headings">
+		
+										Time
+			
+									</div>
+		
+									<div class="values time">
+		
+										<div class="departure">
+											
+											09:55
+											
+										</div>
+										
+										<div class="arrival">
+											
+											12:35
+											
+										</div>
+		
+									</div>
+		
+								</div>
+	
+									<!-- TIME ENDS -->
+	
+	
+									<!-- FARE STARTS -->
+	
+								<div class="col-sm-2 text-center">
+	
+									<div class="headings">
+		
+										Fare
+			
+									</div>
+		
+									<div class="values fare">
+		
+										3,198
+			
+									</div>
+		
+									<div class="fareSubscript">
+		
+										incl. of GST
+			
+									</div>
+		
+								</div>
+	
+									<!-- FARE ENDS -->
+	
+	
+									<!-- AVAILABILITY STARTS -->
+	
+								<div class="col-sm-2 text-center">
+	
+									<div class="headings">
+		
+										Availability
+			
+									</div>
+		
+									<div class="values availabilityRed">
+		
+										Unavailable
+			
+									</div>
+		
+									<div class="unavailabilitySubscript">
+		
+										Sold Out
+			
+									</div>
+		
+								</div>
+	
+									<!-- AVAILABILITY ENDS -->
+				
+							</div> <!-- listItem 3 -->
 							
 						</div> <!-- bg -->
 						

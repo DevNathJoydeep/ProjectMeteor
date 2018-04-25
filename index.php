@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 
 <html>
@@ -5,50 +7,245 @@
 	<head>
 	
 	<meta charset="UTF-8">
+	<meta name="author" content="Joydeep Dev Nath">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link rel="shortcut icon" href="images/favicon.ico">
 	
 	<title>Project Meteor | Joydeep</title>
 	
-	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet"/>
+	<link href="css/hover-min.css" rel="stylesheet"/>
+	<link href="css/main.css" rel="stylesheet"/>
+   	<link href="https://fonts.googleapis.com/css?family=Oswald:200,300,400|Raleway:100,300,400,500|Roboto:100,400,500,700" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 	
-	<style>
-		
-		.gotham {
-			font-family: Gotham;
-		}
-		
-		.arial {
-			font-family: Arial;
-		}
-		
-		.helvetica {
-			font-family: Segoe, 'Segoe UI', 'DejaVu Sans', 'Trebuchet MS', Verdana, 'sans-serif';
-		}
-		
-		.consolas {
-			font-family: Consolas;
-		}
-		
-		.impact {
-			font-family:Impact;
-		}
-		
-		
-	</style>
+	<script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
+	<script src="js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="js/main.js" type="text/javascript"></script>
 	
 	</head>
-	<body style="background: rgba(54,255,164,1.00)">
 	
-		<div class="col-sm-12 text-center">
-			<img src="images/logo.png" width="200em" style="margin-top: 8em;"/>
-		</div>
+	<body>
+	
+		<div class="col-xs-12 home">
 		
-		<div class="col-sm-12 text-center" style="color:indigo; font-weight: 300; font-size: 3em; margin-top: 1.25em;">
-			<span class="arial">ThIs</span><span class="helvetica"> Is</span><span class="gotham"> ThE</span><span class="consolas"> hOmEpAgE</span><span class="impact"> pLaCeHoLdEr.</span>
-		</div>
+			<!-- HEADER SECTION STARTS -->
+				
+			<div class="col-sm-12">
+				
+				<div class="header">
+					
+					<?php
+					
+					if(!isset($_SESSION["username"])) {
+						include("common/headerTransparentLoggedOut.php");
+					}
+					else {
+						include("common/headerTransparentLoggedIn.php");
+					}
+					
+					?>
+				
+				</div> <!-- header -->
+			
+			</div> <!-- col-sm-12 -->
+				
+			<!-- HEADER SECTION ENDS -->
+	
+			<!-- carousel -->
 		
-		<div class="col-sm-12 text-center">
-			<img src="images/flag.png" width="150em" style="margin-top: 6em;"/>
-		</div>
+			<div class="col-xs-12 banner">
+		
+			<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
+		  	
+			  	<ol class="carousel-indicators">
+			   		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+			   		<li data-target="#myCarousel" data-slide-to="1"></li>
+			   		<li data-target="#myCarousel" data-slide-to="2"></li>
+			  	</ol>
+			
+			   	<div class="carousel-inner">
+			   	
+			    	<div class="item active">
+			    	  <img src="images/carousel/image1.jpg" alt="Image1">
+			    	</div>
+			    	
+			    	<div class="item">
+			    	  <img src="images/carousel/image2.jpg" alt="Image2">
+			    	</div>
+				
+			    	<div class="item">
+			    	  <img src="images/carousel/image3.jpg" alt="Image3">
+			    	</div>
+			    
+			  	</div>
+				
+			   	<a href="#myCarousel" class="left carousel-control" data-slide="prev">
+			    	<span class="glyphicon glyphicon-chevron-left"></span>
+			    </a>
+			    <a href="#myCarousel" class="right carousel-control" data-slide="next">
+			        <span class="glyphicon glyphicon-chevron-right"></span>
+			    </a>
+			    
+			</div>
+			
+		</div> <!-- banner -->
+		
+			<!-- icons -->
+			
+			<div class="col-xs-12 iconContainer">
+				
+				<div class="col-xs-12 iconHolder">
+				
+					<div class="col-xs-12 bookQuote">
+					
+						What would you like to book today?
+						
+					</div>
+					
+					<div class="col-xs-12 iconGrids hvr-grow">
+						
+						<div class="col-xs-12 icons text-center">
+							<img src="images/icons/hotel.png" alt="hotels" class="iconsDim text-center"/>
+						</div>
+						
+						<div class="col-xs-12 heading">
+							Hotels
+						</div>
+						
+					</div>
+					
+					<div class="col-xs-12 iconGrids hvr-grow">
+						
+						<div class="col-xs-12 icons text-center">
+							<img src="images/icons/flight.png" alt="hotels" class="iconsDim text-center"/>
+						</div>
+						
+						<div class="col-xs-12 heading">
+							Flights
+						</div>
+						
+					</div>
+					
+					<div class="col-xs-12 iconGrids hvr-grow">
+						
+						<div class="col-xs-12 icons text-center">
+							<img src="images/icons/train.png" alt="hotels" class="iconsDim text-center"/>
+						</div>
+						
+						<div class="col-xs-12 heading">
+							Trains
+						</div>
+						
+					</div>
+					
+					<div class="col-xs-12 iconGrids hvr-grow">
+						
+						<div class="col-xs-12 icons text-center">
+							<img src="images/icons/bus.png" alt="hotels" class="iconsDim text-center"/>
+						</div>
+						
+						<div class="col-xs-12 heading">
+							Buses
+						</div>
+						
+					</div>
+					
+					<div class="col-xs-12 iconGrids hvr-grow">
+						
+						<div class="col-xs-12 icons text-center">
+							<img src="images/icons/taxi.png" alt="hotels" class="iconsDim text-center"/>
+						</div>
+						
+						<div class="col-xs-12 heading">
+							Cabs
+						</div>
+						
+					</div>
+					
+				</div>
+				
+			</div>
+			
+		</div> <!-- home -->
+		
+		<!-- FOOTER SECTION STARTS -->
+					
+				<div class="footerMod col-sm-12">
+					
+					<div class="col-sm-4">
+						
+						<div class="footerHeading">
+							Contact Us
+						</div>
+							
+						<div class="footerText">
+							1, Imaginary Road <br> Unknown City- 000000
+						</div>
+				
+						<div class="footerText">
+							E-mail: user@site.domain
+						</div>
+						
+					</div>
+					
+					<div class="col-sm-4">
+					
+						<div class="footerHeading">
+							Made with
+						</div>
+						
+						<div class="fa fa-heart"></div>
+						
+						<div class="footerHeading">
+							in India
+						</div>
+						
+						<div class="flagContainer text-center">
+							<img src="images/flag.png">
+						</div>
+						
+					</div>
+					
+					<div class="col-sm-4">
+					
+						<div class="footerHeading">
+							Social Links
+						</div>
+						
+						<div class="socialLinks">
+						
+							<div class="fb">
+								facebook.com/xyz
+							</div>
+						
+							<div class="gp">
+								plus.google.com/xyz
+							</div>
+						
+							<div class="tw">
+								twitter.com/xyz
+							</div>
+						
+							<div class="in">
+								linkedin.com/xyz
+							</div>
+						
+						</div> <!-- social links -->
+						
+					</div>
+						
+					<div class="col-sm-12">
+					<div class="copyrightContainer">
+						<div class="copyright">
+						Copyright &copy; 2017 Joydeep Dev Nath.
+						</div>
+					</div>
+					</div>
+							
+				</div> <!-- footer -->
+				
+			<!-- FOOTER SECTION ENDS -->
 		
 	</body>
 	

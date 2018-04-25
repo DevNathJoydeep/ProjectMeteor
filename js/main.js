@@ -179,4 +179,590 @@ $(document).ready(function(){
 		
 	});	
 	
+	
+	
+	//escaping characters on signup page
+	
+	$("#phone").on("keypress",function(e){
+		
+		var noOfDigits=$(this).val().length;
+		
+		if(noOfDigits<10) {
+		
+  			console.log("Entered Key is " + e.key);
+  			switch (e.key)
+  			   {
+  			       case "1":
+  			       case "2":
+  			       case "3":
+  			       case "4":
+  			       case "5":
+  			       case "6":
+  			       case "7":
+  			       case "8":
+  			       case "9":
+  			       case "0":
+  			       case "Backspace":
+  			           return true;
+  			           break;
+			
+  			       default:
+  			           return false;
+  			   }
+		}
+		else {
+			 switch (e.key)
+  			   {
+  			       case "Backspace":
+  			           return true;
+  			           break;
+			
+  			       default:
+  			           return false;
+  			   }
+		}
+});
+	
+	$("#fullname").on("keypress",function(e){
+		
+		var noOfDigits=$(this).val().length;
+		
+		if(noOfDigits<50) {
+		
+  			console.log("Entered Key is " + e.key);
+  			switch (e.key)
+  			   {
+  			       case "a":
+  			       case "b":
+  			       case "c":
+  			       case "d":
+  			       case "e":
+  			       case "f":
+  			       case "g":
+  			       case "h":
+  			       case "i":
+  			       case "j":
+				   case "k":
+  			       case "l":
+  			       case "m":
+  			       case "n":
+  			       case "o":
+  			       case "p":
+  			       case "g":
+  			       case "r":
+  			       case "s":
+  			       case "t":
+				   case "u":
+  			       case "v":
+  			       case "w":
+  			       case "x":
+  			       case "y":
+  			       case "z":
+  			       case "A":
+  			       case "B":
+  			       case "C":
+  			       case "D":
+				   case "E":
+  			       case "F":
+  			       case "G":
+  			       case "H":
+  			       case "I":
+  			       case "J":
+  			       case "K":
+  			       case "L":
+  			       case "M":
+  			       case "N":
+				   case "O":
+				   case "P":
+  			       case "Q":
+  			       case "R":
+  			       case "S":
+  			       case "T":
+  			       case "U":
+  			       case "V":
+  			       case "W":
+  			       case "X":
+  			       case "Y":
+  			       case "Z":
+  			       case ".":
+  			       case "Backspace":
+				   case " ":
+  			           return true;
+  			           break;
+			
+  			       default:
+  			           return false;
+  			   }
+		}
+		else {
+			 switch (e.key)
+  			   {
+  			       case "Backspace":
+  			           return true;
+  			           break;
+			
+  			       default:
+  			           return false;
+  			   }
+		}
+});
+	
+	$("#city").on("keypress",function(e){
+		
+		var noOfDigits=$(this).val().length;
+		
+		if(noOfDigits<50) {
+		
+  			console.log("Entered Key is " + e.key);
+  			switch (e.key)
+  			   {
+  			       case "a":
+  			       case "b":
+  			       case "c":
+  			       case "d":
+  			       case "e":
+  			       case "f":
+  			       case "g":
+  			       case "h":
+  			       case "i":
+  			       case "j":
+				   case "k":
+  			       case "l":
+  			       case "m":
+  			       case "n":
+  			       case "o":
+  			       case "p":
+  			       case "g":
+  			       case "r":
+  			       case "s":
+  			       case "t":
+				   case "u":
+  			       case "v":
+  			       case "w":
+  			       case "x":
+  			       case "y":
+  			       case "z":
+  			       case "A":
+  			       case "B":
+  			       case "C":
+  			       case "D":
+				   case "E":
+  			       case "F":
+  			       case "G":
+  			       case "H":
+  			       case "I":
+  			       case "J":
+  			       case "K":
+  			       case "L":
+  			       case "M":
+  			       case "N":
+				   case "O":
+				   case "P":
+  			       case "Q":
+  			       case "R":
+  			       case "S":
+  			       case "T":
+  			       case "U":
+  			       case "V":
+  			       case "W":
+  			       case "X":
+  			       case "Y":
+  			       case "Z":
+  			       case "Backspace":
+				   case " ":
+  			           return true;
+  			           break;
+			
+  			       default:
+  			           return false;
+  			   }
+		}
+		else {
+			 switch (e.key)
+  			   {
+  			       case "Backspace":
+  			           return true;
+  			           break;
+			
+  			       default:
+  			           return false;
+  			   }
+		}
+});
+	
+	$("#state").on("keypress",function(e){
+		
+		var noOfDigits=$(this).val().length;
+		
+		if(noOfDigits<50) {
+		
+  			console.log("Entered Key is " + e.key);
+  			switch (e.key)
+  			   {
+  			       case "a":
+  			       case "b":
+  			       case "c":
+  			       case "d":
+  			       case "e":
+  			       case "f":
+  			       case "g":
+  			       case "h":
+  			       case "i":
+  			       case "j":
+				   case "k":
+  			       case "l":
+  			       case "m":
+  			       case "n":
+  			       case "o":
+  			       case "p":
+  			       case "g":
+  			       case "r":
+  			       case "s":
+  			       case "t":
+				   case "u":
+  			       case "v":
+  			       case "w":
+  			       case "x":
+  			       case "y":
+  			       case "z":
+  			       case "A":
+  			       case "B":
+  			       case "C":
+  			       case "D":
+				   case "E":
+  			       case "F":
+  			       case "G":
+  			       case "H":
+  			       case "I":
+  			       case "J":
+  			       case "K":
+  			       case "L":
+  			       case "M":
+  			       case "N":
+				   case "O":
+				   case "P":
+  			       case "Q":
+  			       case "R":
+  			       case "S":
+  			       case "T":
+  			       case "U":
+  			       case "V":
+  			       case "W":
+  			       case "X":
+  			       case "Y":
+  			       case "Z":
+  			       case "Backspace":
+				   case " ":
+  			           return true;
+  			           break;
+			
+  			       default:
+  			           return false;
+  			   }
+		}
+		else {
+			 switch (e.key)
+  			   {
+  			       case "Backspace":
+  			           return true;
+  			           break;
+			
+  			       default:
+  			           return false;
+  			   }
+		}
+});
+	
+	
+	
+	
+	//signup username AJAX call
+	
+	var doesEmailExist = $("#username").on("change keyup", function()
+ 	{  
+ 	  $.ajax({
+ 	   
+ 	   type : 'POST',
+ 	   url  : 'checkIfUsernameExists.php',
+ 	   data : $(this).serialize(),
+ 	   success : function(message)
+ 	   			{	
+					if(message.trim() === "true")
+					{
+						$("#signupButton").prop("disabled", true);
+						$("#usernameExists").css("display", "block");
+						//console.log("message is "+message+" button disabled");
+					}
+					else {
+						$("#signupButton").prop("disabled", false);
+						$("#usernameExists").css("display", "none");
+						//console.log("message is "+message+" button enabled");
+					}
+ 	   			}
+ 	   });
+ 	   return false;
+ 	});
+	
+	
+	//password check
+	
+	/*var passwordCheck = $('#password').on("change keyup", function() {
+		
+		var oldPass = $('#password').val().trim();
+		var newPass = $('#repeatPassword').val().trim();
+		
+		console.log("old pass is: "+oldPass);
+		console.log("new pass is: "+newPass);
+		
+		if(oldPass!==newPass) {
+			
+			console.log("entered if");
+			
+			$("#signupButton").on('click', function() {
+				
+				console.log("click heard");
+				
+				alert('The passwords you entered do not match. Please re-enter.');
+				return false;
+				
+				console.log("returned false");
+			});
+			
+		}
+		
+	});*/
+	
+	var repeatPasswordCheck = $('#signupButton').on("click", function() {
+		
+		var oldPass = $('#password').val().trim();
+		var newPass = $('#repeatPassword').val().trim();
+		
+		console.log("old pass is: "+oldPass);
+		console.log("new pass is: "+newPass);
+		
+		if(oldPass!==newPass) {
+			
+			//$("#signupButton").on('click', function() {
+				
+				console.log("click heard");
+				
+				alert('The passwords you entered do not match. Please re-enter.');
+				
+				console.log("alert");
+				return false;
+			//});
+			
+		}
+		
+	});
+	
+	
+	
+	
+	//preventing gibberish data on payments page
+	
+	$("#nameOnCard").on("keypress",function(e){
+		
+		var noOfDigits=$(this).val().length;
+		
+		if(noOfDigits<50) {
+		
+  			console.log("Entered Key is " + e.key);
+  			switch (e.key)
+  			   {
+  			       case "a":
+  			       case "b":
+  			       case "c":
+  			       case "d":
+  			       case "e":
+  			       case "f":
+  			       case "g":
+  			       case "h":
+  			       case "i":
+  			       case "j":
+				   case "k":
+  			       case "l":
+  			       case "m":
+  			       case "n":
+  			       case "o":
+  			       case "p":
+  			       case "g":
+  			       case "r":
+  			       case "s":
+  			       case "t":
+				   case "u":
+  			       case "v":
+  			       case "w":
+  			       case "x":
+  			       case "y":
+  			       case "z":
+  			       case "A":
+  			       case "B":
+  			       case "C":
+  			       case "D":
+				   case "E":
+  			       case "F":
+  			       case "G":
+  			       case "H":
+  			       case "I":
+  			       case "J":
+  			       case "K":
+  			       case "L":
+  			       case "M":
+  			       case "N":
+				   case "O":
+				   case "P":
+  			       case "Q":
+  			       case "R":
+  			       case "S":
+  			       case "T":
+  			       case "U":
+  			       case "V":
+  			       case "W":
+  			       case "X":
+  			       case "Y":
+  			       case "Z":
+  			       case "Backspace":
+				   case " ":
+  			           return true;
+  			           break;
+			
+  			       default:
+  			           return false;
+  			   }
+		}
+		else {
+			 switch (e.key)
+  			   {
+  			       case "Backspace":
+  			           return true;
+  			           break;
+			
+  			       default:
+  			           return false;
+  			   }
+		}
+});
+	
+	$("#cardNumber").on("keypress",function(e){
+		
+		var noOfDigits=$(this).val().length;
+		
+		if(noOfDigits<16) {
+		
+  			console.log("Entered Key is " + e.key);
+  			switch (e.key)
+  			   {
+  			       case "1":
+  			       case "2":
+  			       case "3":
+  			       case "4":
+  			       case "5":
+  			       case "6":
+  			       case "7":
+  			       case "8":
+  			       case "9":
+  			       case "0":
+  			       case "Backspace":
+  			           return true;
+  			           break;
+			
+  			       default:
+  			           return false;
+  			   }
+		}
+		else {
+			 switch (e.key)
+  			   {
+  			       case "Backspace":
+  			           return true;
+  			           break;
+			
+  			       default:
+  			           return false;
+  			   }
+		}
+});
+	
+	$("#cvv").on("keypress",function(e){
+		
+		var noOfDigits=$(this).val().length;
+		
+		if(noOfDigits<3) {
+		
+  			console.log("Entered Key is " + e.key);
+  			switch (e.key)
+  			   {
+  			       case "1":
+  			       case "2":
+  			       case "3":
+  			       case "4":
+  			       case "5":
+  			       case "6":
+  			       case "7":
+  			       case "8":
+  			       case "9":
+  			       case "0":
+  			       case "Backspace":
+  			           return true;
+  			           break;
+			
+  			       default:
+  			           return false;
+  			   }
+		}
+		else {
+			 switch (e.key)
+  			   {
+  			       case "Backspace":
+  			           return true;
+  			           break;
+			
+  			       default:
+  			           return false;
+  			   }
+		}
+});
+	
+	$("#cardExpiry").on("keypress",function(e){
+		
+		var noOfDigits=$(this).val().length;
+		
+		if(noOfDigits<5) {
+		
+  			console.log("Entered Key is " + e.key);
+  			switch (e.key)
+  			   {
+  			       case "1":
+  			       case "2":
+  			       case "3":
+  			       case "4":
+  			       case "5":
+  			       case "6":
+  			       case "7":
+  			       case "8":
+  			       case "9":
+  			       case "0":
+  			       case "/":
+  			       case "Backspace":
+  			           return true;
+  			           break;
+			
+  			       default:
+  			           return false;
+  			   }
+		}
+		else {
+			 switch (e.key)
+  			   {
+  			       case "Backspace":
+  			           return true;
+  			           break;
+			
+  			       default:
+  			           return false;
+  			   }
+		}
+});
+	
 }); //document ready()

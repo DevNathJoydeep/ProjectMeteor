@@ -75,22 +75,24 @@
 				<form action="signupAction.php" method="POST">
 				
 					<label for="name">Full Name:</label>
-					<input type="text" class="input" name="name" placeholder="Enter your full name here" required>
+					<input type="text" class="input" name="name" placeholder="Enter your full name here" id="fullname" required>
 					
 					<label for="email">E-mail:</label>
 					<input type="email" class="input" name="email" placeholder="Enter your email here" required>
 					
 					<label for="phone">Phone:</label>
-					<input type="text" class="input" name="phone" placeholder="Enter your phone no. here" required>
+					<input type="text" class="input" name="phone" placeholder="Enter your phone no. here" id="phone" required>
 					
 					<label for="username">Username:</label>
-					<input type="text" class="input" name="username" placeholder="Enter a username here" required>
+					<input type="text" class="input" name="username" placeholder="Enter a username here" id="username" required>
+					
+					<p id="usernameExists" style="font-size: 1.2em; color: red; font-weight: 400; margin-top: -1.75em; text-align: center; background: rgba(0,0,0,0.4); display: none;">This username already exists. Please choose a different one.</p>
 					
 					<label for="password">Password:</label>
-					<input type="password" class="input" name="password" placeholder="Enter a password here" required>
+					<input type="password" class="input" name="password" placeholder="Enter a password here" id="password" required>
 					
 					<label for="repeatPassword">Repeat Password:</label>
-					<input type="password" class="input" name="repeatPassword" placeholder="Enter the same password again" required>
+					<input type="password" class="input" name="repeatPassword" placeholder="Enter the same password again" id="repeatPassword" required>
 					
 					<label for="addressLine1">Address Line 1:</label>
 					<input type="text" class="input" name="addressLine1" placeholder="Enter your House No./ Flat No. or Apartment No." required>
@@ -99,13 +101,13 @@
 					<input type="text" class="input" name="addressLine2" placeholder="Enter the name of your Lane, Locality" required>
 					
 					<label for="city">City:</label>
-					<input type="text" class="input" name="city" placeholder="Enter the name of your city here" required>
+					<input type="text" class="input" name="city" placeholder="Enter the name of your city here" id="city" required>
 					
 					<label for="addressLine2">State:</label>
-					<input type="text" class="input" name="state" placeholder="Enter the name of your state here" required>
+					<input type="text" class="input" name="state" placeholder="Enter the name of your state here" id="state" required>
 					
 					<div class="col-sm-12 text-center">
-					<input type="submit" class="button" name="signup" value="Sign Up">
+					<input type="submit" class="button" name="signup" value="Sign Up" id="signupButton">
 					</div>
 					
 				</form>

@@ -153,7 +153,7 @@ if(!isset($_SESSION["username"]))
 				
 				<div class="col-sm-12">
 					
-					<input type="text" class="input" name="cardNumber" placeholder="Enter the card number" />
+					<input type="text" class="input" name="cardNumber" placeholder="Enter the card number" id="cardNumber"/>
 					
 				</div>
 				
@@ -165,7 +165,7 @@ if(!isset($_SESSION["username"]))
 				
 				<div class="col-sm-12">
 					
-					<input type="text" class="input" name="nameOnCard" placeholder="Enter the name of the card holder" />
+					<input type="text" class="input" name="nameOnCard" placeholder="Enter the name of the card holder" id="nameOnCard"/>
 					
 				</div>
 				
@@ -183,13 +183,13 @@ if(!isset($_SESSION["username"]))
 				
 				<div class="col-sm-6">
 					
-					<input type="password" class="inputSmall" name="cvv" placeholder="CVV" />
+					<input type="password" class="inputSmall" name="cvv" placeholder="CVV" id="cvv"/>
 					
 				</div>
 				
 				<div class="col-sm-6">
 					
-					<input type="text" class="inputSmall" name="expiry" placeholder="MM/YY" />
+					<input type="text" class="inputSmall" name="expiry" placeholder="MM/YY" id="cardExpiry"/>
 					
 				</div>
 				

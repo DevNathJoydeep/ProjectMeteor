@@ -1475,7 +1475,84 @@
   color: white !important;
 }
 
-.login .input, .login .button, .signup .input, .signup .button, .passengersWrapper .input, .passengersWrapper .inputSmall, .paymentWrapper .input, .paymentWrapper .inputSmall, .messages .button, .blocked .button, .userDashboard .button, .userDashboard .tickets .input, .userDashboard .tickets .tableElementTags {
+.footerMod {
+  height: auto;
+  text-align: center;
+  background: #251974;
+  font-family: "Raleway", "sans-serif";
+  color: white;
+  padding: 3em 0;
+}
+.footerMod .footerHeading {
+  font-family: "oswald", "sans-serif";
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: 500;
+  margin: 0 0 1.1em 0;
+  text-transform: uppercase;
+}
+.footerMod .footerText {
+  text-align: center;
+  font-size: 1em;
+  font-weight: 300;
+  margin-bottom: 2em;
+  line-height: 1.5em;
+}
+.footerMod .footerText:last-child {
+  margin-bottom: 0;
+}
+.footerMod .fa {
+  color: red;
+  font-size: 2em;
+  margin: -0.75em 0 0.42em 0;
+}
+.footerMod .flagContainer img {
+  height: 0.5em;
+  width: auto;
+  margin-top: -0.35em;
+}
+.footerMod .socialLinks {
+  text-align: center;
+}
+.footerMod .socialLinks .fb, .footerMod .socialLinks .gp, .footerMod .socialLinks .tw, .footerMod .socialLinks .in {
+  font-size: 1em;
+  font-weight: 300;
+  margin-bottom: 0.7em;
+}
+.footerMod .socialLinks .fb::before {
+  content: "\f082";
+  font-family: "FontAwesome";
+}
+.footerMod .socialLinks .gp::before {
+  content: "\f0d4";
+  font-family: "FontAwesome";
+}
+.footerMod .socialLinks .tw::before {
+  content: "\f081";
+  font-family: "FontAwesome";
+}
+.footerMod .socialLinks .in::before {
+  content: "\f08c";
+  font-family: "FontAwesome";
+}
+.footerMod .copyright {
+  display: inline-block;
+  border-top: 2px solid #110c36;
+  font-size: 0.95em;
+  padding: 1em 0 0 0;
+  margin: 2em 0 0 0;
+  width: 90%;
+  position: relative;
+}
+.footerMod .copyrightContainer {
+  text-align: center;
+}
+.footerMod a, .footerMod a:hover, .footerMod a:focus, .footerMod a:active {
+  text-decoration: none !important;
+  color: white !important;
+}
+
+.login .input, .login .button, .signup .input, .signup .button, .passengersWrapper .input, .passengersWrapper .inputSmall, .paymentWrapper .input, .paymentWrapper .inputSmall, .messages .button, .blocked .button, .userDashboard .button, .userDashboard .tickets .input, .userDashboard .tickets .tableElementTags, .forgotPassword .input, .forgotPassword .button {
   -webkit-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
   -moz-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
   -o-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
@@ -1508,7 +1585,7 @@
 .login .containerBox {
   box-sizing: border-box;
   border-radius: 0.5em;
-  min-height: 25em;
+  min-height: 27.5em;
   margin: 0em 2em 1.5em 2em;
   padding: 2em 3em;
   height: auto;
@@ -1572,7 +1649,7 @@
   color: white !important;
 }
 
-.login .input, .login .button, .signup .input, .signup .button, .passengersWrapper .input, .passengersWrapper .inputSmall, .paymentWrapper .input, .paymentWrapper .inputSmall, .messages .button, .blocked .button, .userDashboard .button, .userDashboard .tickets .input, .userDashboard .tickets .tableElementTags {
+.login .input, .login .button, .signup .input, .signup .button, .passengersWrapper .input, .passengersWrapper .inputSmall, .paymentWrapper .input, .paymentWrapper .inputSmall, .messages .button, .blocked .button, .userDashboard .button, .userDashboard .tickets .input, .userDashboard .tickets .tableElementTags, .forgotPassword .input, .forgotPassword .button {
   -webkit-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
   -moz-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
   -o-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
@@ -1903,7 +1980,7 @@
   font-family: "sans-serif";
 }
 
-.login .input, .login .button, .signup .input, .signup .button, .passengersWrapper .input, .passengersWrapper .inputSmall, .paymentWrapper .input, .paymentWrapper .inputSmall, .messages .button, .blocked .button, .userDashboard .button, .userDashboard .tickets .input, .userDashboard .tickets .tableElementTags {
+.login .input, .login .button, .signup .input, .signup .button, .passengersWrapper .input, .passengersWrapper .inputSmall, .paymentWrapper .input, .paymentWrapper .inputSmall, .messages .button, .blocked .button, .userDashboard .button, .userDashboard .tickets .input, .userDashboard .tickets .tableElementTags, .forgotPassword .input, .forgotPassword .button {
   -webkit-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
   -moz-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
   -o-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
@@ -2021,7 +2098,7 @@
   -webkit-appearance: none;
 }
 
-.login .input, .login .button, .signup .input, .signup .button, .passengersWrapper .input, .passengersWrapper .inputSmall, .paymentWrapper .input, .paymentWrapper .inputSmall, .messages .button, .blocked .button, .userDashboard .button, .userDashboard .tickets .input, .userDashboard .tickets .tableElementTags {
+.login .input, .login .button, .signup .input, .signup .button, .passengersWrapper .input, .passengersWrapper .inputSmall, .paymentWrapper .input, .paymentWrapper .inputSmall, .messages .button, .blocked .button, .userDashboard .button, .userDashboard .tickets .input, .userDashboard .tickets .tableElementTags, .forgotPassword .input, .forgotPassword .button {
   -webkit-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
   -moz-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
   -o-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
@@ -2526,7 +2603,7 @@
   color: white !important;
 }
 
-.login .input, .login .button, .signup .input, .signup .button, .passengersWrapper .input, .passengersWrapper .inputSmall, .paymentWrapper .input, .paymentWrapper .inputSmall, .messages .button, .blocked .button, .userDashboard .button, .userDashboard .tickets .input, .userDashboard .tickets .tableElementTags {
+.login .input, .login .button, .signup .input, .signup .button, .passengersWrapper .input, .passengersWrapper .inputSmall, .paymentWrapper .input, .paymentWrapper .inputSmall, .messages .button, .blocked .button, .userDashboard .button, .userDashboard .tickets .input, .userDashboard .tickets .tableElementTags, .forgotPassword .input, .forgotPassword .button {
   -webkit-transition: all 500ms cubic-bezier(0.42, 0, 0.58, 1);
   -moz-transition: all 500ms cubic-bezier(0.42, 0, 0.58, 1);
   -o-transition: all 500ms cubic-bezier(0.42, 0, 0.58, 1);
@@ -4071,6 +4148,247 @@
   content: ")";
   position: relative;
   left: -0.25em !important;
+}
+
+.login .input, .login .button, .signup .input, .signup .button, .passengersWrapper .input, .passengersWrapper .inputSmall, .paymentWrapper .input, .paymentWrapper .inputSmall, .messages .button, .blocked .button, .userDashboard .button, .userDashboard .tickets .input, .userDashboard .tickets .tableElementTags, .forgotPassword .input, .forgotPassword .button {
+  -webkit-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+  -moz-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+  -o-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+  transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+.forgotPassword {
+  font-family: "raleway", sans-serif;
+  text-overflow: ellipsis;
+  background-image: url("../images/login/login_bg.jpg");
+  background-attachment: fixed;
+  height: auto;
+  min-height: 100vh !important;
+  background-size: cover;
+  text-align: center;
+}
+.forgotPassword label {
+  color: white;
+  font-weight: 300 !important;
+  font-size: 1.25em;
+  margin-bottom: 0.75em !important;
+  text-align: left !important;
+}
+.forgotPassword .heading {
+  margin: 2em 0 0.75em 0;
+  font-size: 2.75em;
+  font-weight: 300;
+  color: white;
+  text-align: center;
+}
+.forgotPassword .containerBox {
+  box-sizing: border-box;
+  border-radius: 0.5em;
+  min-height: 15em;
+  margin: 0em 2em 1.5em 2em;
+  padding: 2em 3em;
+  height: auto;
+  background: rgba(48, 48, 48, 0.8);
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+.forgotPassword .containerBoxMod {
+  box-sizing: border-box;
+  border-radius: 0.5em;
+  min-height: 12.5em;
+  margin: 0em 2em 1.5em 2em;
+  padding: 2em 3em;
+  height: auto;
+  background: rgba(48, 48, 48, 0.8);
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+.forgotPassword .input {
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  padding: 5px 10px;
+  width: 95%;
+  border: 2px solid white;
+  -webkit-border-radius: 5px;
+  border-radius: 3px;
+  font-family: 'Raleway', "sans-serif";
+  font-size: 1.25em;
+  font-weight: 300;
+  color: white;
+  margin-bottom: 1em;
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background: rgba(244, 244, 244, 0.25);
+  text-align: center;
+}
+.forgotPassword .input:focus {
+  box-shadow: 0px 0px 5px 0px white;
+}
+.forgotPassword .button {
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  cursor: pointer;
+  padding: 10px 50px;
+  border: 2px solid white;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  font-size: 1.25em;
+  font-weight: 300;
+  margin-top: 0.1em;
+  color: white;
+  background: rgba(255, 255, 255, 0);
+  -o-text-overflow: clip;
+  text-overflow: clip;
+}
+.forgotPassword .button:hover {
+  color: gray;
+  background: white;
+}
+.forgotPassword .signupPrompt {
+  color: white;
+  font-weight: 300;
+  font-size: 1.25em;
+  text-align: center;
+  margin-top: 3em !important;
+}
+.forgotPassword a, .forgotPassword a:hover, .forgotPassword a:focus, .forgotPassword a:active {
+  text-decoration: none !important;
+  color: white !important;
+}
+
+.home {
+  padding: 0em 1em;
+  min-height: 50em;
+  background-image: url("../images/home/home_bg.jpg");
+  background-attachment: fixed;
+  background-clip: border-box;
+  background-size: cover;
+}
+.home .header {
+  font-family: "raleway", sans-serif;
+  text-overflow: ellipsis;
+  background-color: #d3cef7;
+  background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23fefefe' fill-opacity='1' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+  background-attachment: fixed;
+}
+.home .header .logo {
+  box-sizing: border-box;
+  height: 4em;
+  width: 8em;
+  margin: 2em 2em 2em 0.75em;
+  background: url(../images/logo.png) no-repeat;
+  background-size: 100% 100%;
+}
+.home .header .headerMenu {
+  border-radius: 0.5em;
+  box-sizing: border-box;
+  margin: 2.5em 1em 2.5em 2em;
+  height: auto;
+  background: rgba(48, 48, 48, 0.8);
+  float: right;
+}
+.home .header .headerMenu ul, .home .header .headerMenu li {
+  display: inline-block;
+  font-size: 1em;
+  color: white;
+  font-weight: 400;
+  padding: 0.3em 1.5em 0.3em 1.5em;
+  cursor: pointer;
+  transition: all 500ms cubic-bezier(0.42, 0, 0.58, 1);
+}
+.home .header .headerMenu .active {
+  color: #f84e51;
+}
+.home .header .menu {
+  box-sizing: border-box;
+  border-radius: 0.5em 0.5em 0 0;
+  margin: 2em 2em 1.5em 2em;
+  height: auto;
+  background: rgba(48, 48, 48, 0.8);
+}
+.home .header .menu ul, .home .header .menu li {
+  display: inline-block;
+  font-size: 1.2em;
+  color: white;
+  font-weight: 300;
+  padding: 0.35em 4em 0.1em 4em;
+  cursor: pointer;
+  transition: all 500ms cubic-bezier(0.42, 0, 0.58, 1);
+}
+.home .header ul:hover, .home .header li:hover {
+  color: #f84e51;
+}
+.home .header li[class="selected"] {
+  color: #f84e51;
+}
+.home .banner {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  width: auto;
+  overflow: hidden;
+  border: none;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  border: 3px solid white;
+  padding: 0 !important;
+  margin: 0 1em;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
+}
+.home .iconContainer {
+  padding: 1em;
+}
+.home .iconContainer .iconHolder {
+  background: white;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
+  margin-top: 1em;
+  padding: 2.5em 0 1.5em 0 !important;
+  overflow: hidden !important;
+}
+.home .iconContainer .iconHolder .bookQuote {
+  font-family: "Raleway", "sans-serif";
+  color: #251974;
+  font-size: 1.85em;
+  text-align: center;
+  margin-bottom: 1em;
+  font-weight: 300;
+}
+.home .iconContainer .iconHolder .iconGrids {
+  width: 20%;
+  border-right: 1px solid rgba(2, 0, 255, 0.25);
+  border-left: 1px solid rgba(2, 0, 255, 0.25);
+  padding: 0.5em;
+  margin: 1.5em 0;
+  cursor: pointer;
+  transition: all 500ms cubic-bezier(0.42, 0, 0.58, 1);
+}
+.home .iconContainer .iconHolder .iconGrids:hover {
+  background: rgba(208, 208, 208, 0.25);
+}
+.home .iconContainer .iconHolder .iconGrids:last-child {
+  border-right: none !important;
+}
+.home .iconContainer .iconHolder .iconGrids:first-child {
+  border-left: none !important;
+}
+.home .iconContainer .iconHolder .iconGrids .icons {
+  margin: auto !important;
+  text-align: center !important;
+}
+.home .iconContainer .iconHolder .iconGrids .iconsDim {
+  height: 96px;
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.home .iconContainer .iconHolder .heading {
+  font-size: 1.25em;
+  font-family: "Raleway", "sans-serif";
+  text-align: center;
+  margin-top: 1em;
 }
 
 /* ================================================================ */

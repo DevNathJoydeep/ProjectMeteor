@@ -56,16 +56,14 @@
 				<form action="loginAction.php" method="POST">
 					
 					<label for="username">Username:</label>
-					<input type="text" class="input" name="username" placeholder="Enter username here" required>
+					<input type="text" class="input" name="username" placeholder="Enter username here">
 					
 					<label for="password">Password:</label>
-					<input type="password" class="input" name="password" placeholder="Enter password here" required>
+					<input type="password" class="input" name="password" placeholder="Enter password here">
 					
 					<div class="col-sm-12 text-center">
 					<input type="submit" class="button" name="login" value="Login">
 					</div>
-					
-					<a href="forgotPassword.php"><p class="col-xs-12 dots" style="color: white; font-size: 1.1em; margin-top: 1em; text-align: center;">Forgot Password?</p></a>
 					
 				</form>
 				

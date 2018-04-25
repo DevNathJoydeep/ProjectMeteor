@@ -1,3 +1,11 @@
+<?php session_start();
+if(!isset($_SESSION["username"]))
+{
+    	header("Location:blocked.php");
+   		$_SESSION['url'] = $_SERVER['REQUEST_URI']; 
+}
+?>
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -11,7 +19,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<link rel="shortcut icon" href="images/favicon.ico">
 	
-		<title>Login | Project Meteor</title>
+		<title>Dashboard | Project Meteor</title>
     
     	<link href="css/main.css" rel="stylesheet">
     	<link href="css/bootstrap.min.css" rel="stylesheet">
@@ -39,47 +47,57 @@
 	
 		<div class="container-fluid">
 		
-		<div class="login">
-				
+			<div class="col-sm-12 userDashboard text-center">
+			
+			<?php include("common/headerTransparentLoggedIn.php"); ?>
+			
 			<div class="col-sm-12">
 					
 				<div class="heading text-center">
-					Login
+					My Dashboard <?php echo $_SESSION["username"]; ?>
 				</div>
 						
 			</div>
 			
-			<div class="col-sm-6 col-sm-offset-3">
+			<!-- <div class="col-sm-1"></div> -->
+			
+			<div class="col-sm-3 containerBoxLeft">
 				
-				<div class="containerBox">
-				
-				<form action="loginAction.php" method="POST">
-					
-					<label for="username">Username:</label>
-					<input type="text" class="input" name="username" placeholder="Enter username here" required>
-					
-					<label for="password">Password:</label>
-					<input type="password" class="input" name="password" placeholder="Enter password here" required>
-					
-					<div class="col-sm-12 text-center">
-					<input type="submit" class="button" name="login" value="Login">
-					</div>
-					
-					<a href="forgotPassword.php"><p class="col-xs-12 dots" style="color: white; font-size: 1.1em; margin-top: 1em; text-align: center;">Forgot Password?</p></a>
-					
-				</form>
-				
-					<div class="col-sm-12 text-center">
-						<div class="signupPrompt">
-							New user? <a href="signup.php"><span class="dots">Sign Up</span></a> instead.
-						</div>
-					</div>
-				
+				<div class="col-sm-12 menuContainer bottomBorder active">
+					<span class="fa fa-user-o"></span> My Profile
 				</div>
+				
+				<a href="userDashboardBookings.php">
+				<div class="col-sm-12 menuContainer bottomBorder">
+					<span class="fa fa-copy"></span> My Bookings
+				</div>
+				</a>
+				
+				<a href="userDashboardETickets.php">
+				<div class="col-sm-12 menuContainer bottomBorder">
+					<span class="fa fa-clone"></span> My E-Tickets
+				</div>
+				</a>
+				
+				<a href="userDashboardCancelTicket.php">
+				<div class="col-sm-12 menuContainer bottomBorder">
+					<span class="fa fa-close"></span> Cancel Ticket
+				</div>
+				</a>
+				
+				<a href="userDashboardAccountSettings.php">
+				<div class="col-sm-12 menuContainer">
+					<span class="fa fa-gear"></span> Account Settings
+				</div>
+				</a>
 				
 			</div>
 			
-		</div>
+			<div class="col-sm-9 containerBoxRight"></div>
+			
+			<!-- <div class="col-sm-1"></div> -->
+			
+			</div>
 		
 		</div> <!-- container-fluid -->
 		

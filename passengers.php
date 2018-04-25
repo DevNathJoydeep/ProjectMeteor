@@ -55,7 +55,7 @@ if(!isset($_SESSION["username"]))
 				$return=$_POST["returnHidden"];
 				$adults=$_POST["adultsHidden"];
 				$children=$_POST["childrenHidden"];
-				$noOfPassengers=(int)$adults+(int)$children;
+				$totalPassengers=(int)$adults+(int)$children;
 			
 				if($type=="Return Trip") {
 					$flightNoOutbound=$_POST["flightNoOutboundHidden"];
@@ -72,7 +72,7 @@ if(!isset($_SESSION["username"]))
 				
 			}
 		
-			if($mode=="bus") {
+			elseif($mode=="bus") {
 				$date = $_POST["dateHidden"];
 				$busID = $_POST["busIDHidden"];
 				$totalPassengers=$_POST["noOfPassengersHidden"];
@@ -80,7 +80,7 @@ if(!isset($_SESSION["username"]))
 				$destination=$_POST["destinationHidden"];
 			}
 		
-			if($mode=="train") {
+			elseif($mode=="train") {
 				$date = $_POST["dateHidden"];
 				$day = $_POST["dayHidden"];
 				$trainID = $_POST["trainIDHidden"];
@@ -142,19 +142,19 @@ if(!isset($_SESSION["username"]))
 						<input type="hidden" name="childrenHidden" value="<?php echo $children; ?>">
 						<input type="hidden" name="modeHidden" value="<?php echo $mode; ?>">
 						
-						<?php if($mode="bus") { ?>
+						<?php if($mode=="bus") { ?>
 							<input type="hidden" name="dateHidden" value="<?php echo $date; ?>">
 							<input type="hidden" name="busIDHidden" value="<?php echo $busID; ?>">
 						<?php } ?>
 						
-						<?php if($mode="train") { ?>
+						<?php if($mode=="train") { ?>
 							<input type="hidden" name="dateHidden" value="<?php echo $date; ?>">
 							<input type="hidden" name="dayHidden" value="<?php echo $day; ?>">
 							<input type="hidden" name="classHidden" value="<?php echo $class; ?>">
 							<input type="hidden" name="trainIDHidden" value="<?php echo $trainID; ?>">
 						<?php } ?>
 						
-						<?php if($mode=="OneWayFlight" || $mode=="ReturnTripFlight") { ?>
+						<?php if($mode=="OneWayFlight" || $mode=="ReturnTripFlight") {?>
 						
 						<?php if($type=="Return Trip") { ?>
 						<input type="hidden" name="flightNoOutboundHidden" value="<?php echo $flightNoOutbound; ?>">
