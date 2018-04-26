@@ -14,10 +14,10 @@
 			
 			<ul>
 				<a href="index.php"><li>Home</li></a>
-				<li>About Us</li>
+				<a href="aboutUs.php"><li>About Us</li></a>
 				<li class="active">Dashboard</li>
 				<a href="logout.php"><li>Logout</li></a>
-				<li>Contact Us</li>
+				<a href="contactUs.php"><li>Contact Us</li></a>
 			</ul>
 			
 		</div>

@@ -634,11 +634,11 @@ if(!isset($_SESSION["username"]))
 						</div>
 							
 						<div class="footerText">
-							1, Imaginary Road <br> Unknown City- 000000
+							3rd floor, Basai Enclave, Sector 10, <br> Gurugram-122006, Haryana, India
 						</div>
 				
 						<div class="footerText">
-							E-mail: user@site.domain
+							E-mail: queries@travelwale.com
 						</div>
 						
 					</div>
@@ -670,19 +670,19 @@ if(!isset($_SESSION["username"]))
 						<div class="socialLinks">
 						
 							<div class="fb">
-								facebook.com/xyz
+								facebook.com/travelwale
 							</div>
 						
 							<div class="gp">
-								plus.google.com/xyz
+								plus.google.com/travelwale
 							</div>
 						
 							<div class="tw">
-								twitter.com/xyz
+								twitter.com/travelwale
 							</div>
 						
 							<div class="in">
-								linkedin.com/xyz
+								linkedin.com/travelwale
 							</div>
 						
 						</div> <!-- social links -->
@@ -692,7 +692,7 @@ if(!isset($_SESSION["username"]))
 					<div class="col-sm-12">
 					<div class="copyrightContainer">
 						<div class="copyright">
-						Copyright &copy; 2017 Joydeep Dev Nath.
+						Copyright &copy; 2018 Joydeep Dev Nath.
 						</div>
 					</div>
 					</div>

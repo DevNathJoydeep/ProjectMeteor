@@ -1351,7 +1351,7 @@
 .header .logo {
   box-sizing: border-box;
   height: 4em;
-  width: 8em;
+  width: 15em;
   margin: 2em 2em 2em 2em;
   background: url(../images/logo.png) no-repeat;
   background-size: 100% 100%;
@@ -1552,7 +1552,7 @@
   color: white !important;
 }
 
-.login .input, .login .button, .signup .input, .signup .button, .passengersWrapper .input, .passengersWrapper .inputSmall, .paymentWrapper .input, .paymentWrapper .inputSmall, .messages .button, .blocked .button, .userDashboard .button, .userDashboard .tickets .input, .userDashboard .tickets .tableElementTags, .forgotPassword .input, .forgotPassword .button {
+.login .input, .login .button, .signup .input, .signup .button, .passengersWrapper .inputPassengerName, .passengersWrapper .inputSmall, .paymentWrapper .input, .paymentWrapper .inputSmall, .messages .button, .blocked .button, .userDashboard .button, .userDashboard .tickets .input, .userDashboard .tickets .tableElementTags, .forgotPassword .input, .forgotPassword .button, .aboutUsWrapper .input, .aboutUsWrapper .inputSmall, .contactPadding .contactUsForm .input, .contactPadding .contactUsForm .inputSmall {
   -webkit-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
   -moz-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
   -o-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
@@ -1649,7 +1649,7 @@
   color: white !important;
 }
 
-.login .input, .login .button, .signup .input, .signup .button, .passengersWrapper .input, .passengersWrapper .inputSmall, .paymentWrapper .input, .paymentWrapper .inputSmall, .messages .button, .blocked .button, .userDashboard .button, .userDashboard .tickets .input, .userDashboard .tickets .tableElementTags, .forgotPassword .input, .forgotPassword .button {
+.login .input, .login .button, .signup .input, .signup .button, .passengersWrapper .inputPassengerName, .passengersWrapper .inputSmall, .paymentWrapper .input, .paymentWrapper .inputSmall, .messages .button, .blocked .button, .userDashboard .button, .userDashboard .tickets .input, .userDashboard .tickets .tableElementTags, .forgotPassword .input, .forgotPassword .button, .aboutUsWrapper .input, .aboutUsWrapper .inputSmall, .contactPadding .contactUsForm .input, .contactPadding .contactUsForm .inputSmall {
   -webkit-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
   -moz-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
   -o-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
@@ -1980,7 +1980,7 @@
   font-family: "sans-serif";
 }
 
-.login .input, .login .button, .signup .input, .signup .button, .passengersWrapper .input, .passengersWrapper .inputSmall, .paymentWrapper .input, .paymentWrapper .inputSmall, .messages .button, .blocked .button, .userDashboard .button, .userDashboard .tickets .input, .userDashboard .tickets .tableElementTags, .forgotPassword .input, .forgotPassword .button {
+.login .input, .login .button, .signup .input, .signup .button, .passengersWrapper .inputPassengerName, .passengersWrapper .inputSmall, .paymentWrapper .input, .paymentWrapper .inputSmall, .messages .button, .blocked .button, .userDashboard .button, .userDashboard .tickets .input, .userDashboard .tickets .tableElementTags, .forgotPassword .input, .forgotPassword .button, .aboutUsWrapper .input, .aboutUsWrapper .inputSmall, .contactPadding .contactUsForm .input, .contactPadding .contactUsForm .inputSmall {
   -webkit-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
   -moz-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
   -o-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
@@ -2000,7 +2000,7 @@
   text-align: center;
   margin: 0.25em 0 1.25em 0;
 }
-.passengersWrapper .input {
+.passengersWrapper .inputPassengerName {
   display: inline-block;
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
@@ -2021,7 +2021,7 @@
   text-overflow: clip;
   background: rgba(37, 25, 116, 0.075);
 }
-.passengersWrapper .input:focus {
+.passengersWrapper .inputPassengerName:focus {
   box-shadow: 0px 0px 2px 0px #251974;
 }
 .passengersWrapper .inputSmall {
@@ -2098,7 +2098,7 @@
   -webkit-appearance: none;
 }
 
-.login .input, .login .button, .signup .input, .signup .button, .passengersWrapper .input, .passengersWrapper .inputSmall, .paymentWrapper .input, .paymentWrapper .inputSmall, .messages .button, .blocked .button, .userDashboard .button, .userDashboard .tickets .input, .userDashboard .tickets .tableElementTags, .forgotPassword .input, .forgotPassword .button {
+.login .input, .login .button, .signup .input, .signup .button, .passengersWrapper .inputPassengerName, .passengersWrapper .inputSmall, .paymentWrapper .input, .paymentWrapper .inputSmall, .messages .button, .blocked .button, .userDashboard .button, .userDashboard .tickets .input, .userDashboard .tickets .tableElementTags, .forgotPassword .input, .forgotPassword .button, .aboutUsWrapper .input, .aboutUsWrapper .inputSmall, .contactPadding .contactUsForm .input, .contactPadding .contactUsForm .inputSmall {
   -webkit-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
   -moz-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
   -o-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
@@ -2263,7 +2263,7 @@
   }
   .generateTicket img {
     height: 5em;
-    width: 10em;
+    width: 16em;
     margin: 2em 0em 0em 2em;
     position: relative;
     top: -1.35em;
@@ -2603,7 +2603,7 @@
   color: white !important;
 }
 
-.login .input, .login .button, .signup .input, .signup .button, .passengersWrapper .input, .passengersWrapper .inputSmall, .paymentWrapper .input, .paymentWrapper .inputSmall, .messages .button, .blocked .button, .userDashboard .button, .userDashboard .tickets .input, .userDashboard .tickets .tableElementTags, .forgotPassword .input, .forgotPassword .button {
+.login .input, .login .button, .signup .input, .signup .button, .passengersWrapper .inputPassengerName, .passengersWrapper .inputSmall, .paymentWrapper .input, .paymentWrapper .inputSmall, .messages .button, .blocked .button, .userDashboard .button, .userDashboard .tickets .input, .userDashboard .tickets .tableElementTags, .forgotPassword .input, .forgotPassword .button, .aboutUsWrapper .input, .aboutUsWrapper .inputSmall, .contactPadding .contactUsForm .input, .contactPadding .contactUsForm .inputSmall {
   -webkit-transition: all 500ms cubic-bezier(0.42, 0, 0.58, 1);
   -moz-transition: all 500ms cubic-bezier(0.42, 0, 0.58, 1);
   -o-transition: all 500ms cubic-bezier(0.42, 0, 0.58, 1);
@@ -3466,7 +3466,7 @@
   }
   .generateReceipt img {
     height: 5em;
-    width: 10em;
+    width: 16em;
     margin: 2em 0em 0em 2em;
     position: relative;
     top: -1.35em;
@@ -3595,7 +3595,7 @@
   }
   .generateTicket img {
     height: 4em;
-    width: 8em;
+    width: 14em;
     margin: 2em 0em -1.5em 2em;
     position: relative;
     top: -2em;
@@ -3722,7 +3722,7 @@
   }
   .generateRiderReceipt img {
     height: 5em;
-    width: 10em;
+    width: 16em;
     margin: 2em 0em 0em 2em;
     position: relative;
     top: -1.35em;
@@ -4150,7 +4150,7 @@
   left: -0.25em !important;
 }
 
-.login .input, .login .button, .signup .input, .signup .button, .passengersWrapper .input, .passengersWrapper .inputSmall, .paymentWrapper .input, .paymentWrapper .inputSmall, .messages .button, .blocked .button, .userDashboard .button, .userDashboard .tickets .input, .userDashboard .tickets .tableElementTags, .forgotPassword .input, .forgotPassword .button {
+.login .input, .login .button, .signup .input, .signup .button, .passengersWrapper .inputPassengerName, .passengersWrapper .inputSmall, .paymentWrapper .input, .paymentWrapper .inputSmall, .messages .button, .blocked .button, .userDashboard .button, .userDashboard .tickets .input, .userDashboard .tickets .tableElementTags, .forgotPassword .input, .forgotPassword .button, .aboutUsWrapper .input, .aboutUsWrapper .inputSmall, .contactPadding .contactUsForm .input, .contactPadding .contactUsForm .inputSmall {
   -webkit-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
   -moz-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
   -o-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
@@ -4278,8 +4278,8 @@
 .home .header .logo {
   box-sizing: border-box;
   height: 4em;
-  width: 8em;
-  margin: 2em 2em 2em 0.75em;
+  width: 15em;
+  margin: 1.5em 2em 2em 0.75em;
   background: url(../images/logo.png) no-repeat;
   background-size: 100% 100%;
 }
@@ -4389,6 +4389,334 @@
   font-family: "Raleway", "sans-serif";
   text-align: center;
   margin-top: 1em;
+}
+.home .popularDestinationsContainer {
+  padding: 1em;
+  margin: -1em 0 4em 0;
+}
+.home .popularDestinationsContainer .destinationHolder {
+  background: white;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
+  margin-top: 1em;
+  padding: 2.5em 1.5em 1.5em 1.5em !important;
+  overflow: hidden !important;
+}
+.home .popularDestinationsContainer .destinationHolder .destinationQuote {
+  font-family: "Raleway", "sans-serif";
+  color: #251974;
+  font-size: 1.85em;
+  text-align: center;
+  margin-bottom: 0.75em;
+  font-weight: 300;
+}
+.home .popularDestinationsContainer .destinationHolder .containerGrids {
+  width: 33.33%;
+  padding: 0.5em 1em;
+  margin: 1.5em 0;
+  cursor: pointer;
+  transition: all 500ms cubic-bezier(0.42, 0, 0.58, 1);
+}
+.home .popularDestinationsContainer .destinationHolder .containerGrids .pics {
+  margin: auto !important;
+  text-align: center !important;
+  border: 2px solid white;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
+  padding: 1em !important;
+}
+.home .popularDestinationsContainer .destinationHolder .containerGrids .picDim {
+  height: 225px;
+  width: 100%;
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.home .popularDestinationsContainer .destinationHolder .heading {
+  font-size: 1.25em;
+  font-family: "Raleway", "sans-serif";
+  text-align: center;
+  margin-top: 1em;
+}
+
+.login .input, .login .button, .signup .input, .signup .button, .passengersWrapper .inputPassengerName, .passengersWrapper .inputSmall, .paymentWrapper .input, .paymentWrapper .inputSmall, .messages .button, .blocked .button, .userDashboard .button, .userDashboard .tickets .input, .userDashboard .tickets .tableElementTags, .forgotPassword .input, .forgotPassword .button, .aboutUsWrapper .input, .aboutUsWrapper .inputSmall, .contactPadding .contactUsForm .input, .contactPadding .contactUsForm .inputSmall {
+  -webkit-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+  -moz-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+  -o-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+  transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+.aboutUsWrapper {
+  font-family: "Raleway", "sans-serif";
+  height: auto;
+  background: white;
+  margin-bottom: 2em;
+}
+.aboutUsWrapper .headingOne {
+  font-size: 2.5em;
+  font-weight: 300;
+  color: #251974;
+  text-align: center;
+  margin: 0.25em 0 0.75em 0;
+}
+.aboutUsWrapper .para {
+  font-size: 1.25em;
+  font-weight: 400;
+  color: #251974;
+  text-align: justify;
+  margin: 0.25em 0 1.25em 0;
+  padding: 0 3em;
+}
+.aboutUsWrapper .boxCenter {
+  box-sizing: border-box;
+  background: #f5f5ff;
+  height: auto;
+  min-height: 27em;
+  vertical-align: middle;
+  margin: 1.5em 2em;
+  border: 2px solid #251974;
+  border-radius: 8px;
+  padding: 1.25em 1em 1.25em 1em;
+}
+.aboutUsWrapper .tag {
+  font-size: 1.25em;
+  font-weight: 300;
+  margin-bottom: 0.25em;
+  color: #251974;
+}
+.aboutUsWrapper .input {
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  padding: 5px 10px;
+  width: 90%;
+  border: 2px solid #251974;
+  -webkit-border-radius: 5px;
+  border-radius: 3px;
+  font-family: 'Raleway', "sans-serif";
+  font-size: 1.25em;
+  font-weight: 300;
+  color: #251974;
+  margin-bottom: 1em;
+  margin-left: 0.75em;
+  margin-right: 0.75em;
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background: rgba(37, 25, 116, 0.075);
+}
+.aboutUsWrapper .input:focus {
+  box-shadow: 0px 0px 2px 0px #251974;
+}
+.aboutUsWrapper .inputSmall {
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  padding: 5px 10px;
+  width: 89%;
+  border: 2px solid #251974;
+  -webkit-border-radius: 5px;
+  border-radius: 3px;
+  font-family: 'Raleway', "sans-serif";
+  font-size: 1.25em;
+  font-weight: 300;
+  color: #251974;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background: rgba(37, 25, 116, 0.075);
+}
+.aboutUsWrapper .inputSmall:focus {
+  box-shadow: 0px 0px 2px 0px #251974;
+}
+.aboutUsWrapper .paymentButton {
+  color: #251974;
+  font-size: 1.25em;
+  margin-top: 1.5em;
+  font-weight: 300;
+  width: 50%;
+  border: 2px solid #251974;
+  border-radius: 5px;
+  background: rgba(37, 25, 116, 0.075);
+  padding: 0.5em 0em;
+  transition: all 500ms cubic-bezier(0.42, 0, 0.58, 1);
+  cursor: pointer;
+}
+.aboutUsWrapper .paymentButton:hover {
+  color: white;
+  border: 2px solid #251974;
+  border-radius: 5px;
+  background: #251974;
+}
+.aboutUsWrapper .totalAmount {
+  font-size: 1.5em;
+  font-weight: 300;
+  color: #251974;
+  text-align: center;
+  margin: -1.8em 0 1.5em 0;
+}
+.aboutUsWrapper .sansSerif {
+  font-family: "sans-serif";
+}
+
+.login .input, .login .button, .signup .input, .signup .button, .passengersWrapper .inputPassengerName, .passengersWrapper .inputSmall, .paymentWrapper .input, .paymentWrapper .inputSmall, .messages .button, .blocked .button, .userDashboard .button, .userDashboard .tickets .input, .userDashboard .tickets .tableElementTags, .forgotPassword .input, .forgotPassword .button, .aboutUsWrapper .input, .aboutUsWrapper .inputSmall, .contactPadding .contactUsForm .input, .contactPadding .contactUsForm .inputSmall {
+  -webkit-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+  -moz-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+  -o-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+  transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+.contactUsWrapper {
+  font-family: "Raleway", "sans-serif";
+  height: auto;
+  background: white;
+  margin-bottom: 2em;
+}
+.contactUsWrapper .headingOne {
+  font-size: 2.5em;
+  font-weight: 300;
+  color: #251974;
+  text-align: center;
+  margin: 0.25em 0 0.75em 0;
+}
+.contactUsWrapper .para {
+  font-size: 1.25em;
+  font-weight: 400;
+  color: #251974;
+  text-align: justify;
+  margin: 0.25em 0 1.25em 0;
+  padding: 0 3em;
+}
+.contactUsWrapper .totalAmount {
+  font-size: 1.5em;
+  font-weight: 300;
+  color: #251974;
+  text-align: center;
+  margin: -1.8em 0 1.5em 0;
+}
+.contactUsWrapper .sansSerif {
+  font-family: "sans-serif";
+}
+
+.contactPadding {
+  margin: auto !important;
+}
+.contactPadding .contactUsExtras {
+  font-family: "Raleway", "sans-serif";
+  height: auto;
+  background: white;
+  margin-bottom: 2em;
+  padding: 0 !important;
+}
+.contactPadding .contactUsExtras .heading {
+  font-size: 1.25em;
+  padding: 0 !important;
+}
+.contactPadding .contactUsExtras .mapImage {
+  padding: 0 !important;
+}
+.contactPadding .contactUsExtras .bold {
+  font-weight: 500;
+}
+.contactPadding .contactUsExtras .mapDim {
+  margin-top: 2em;
+  width: 512px !important;
+  height: 300px !important;
+}
+.contactPadding .contactUsForm {
+  box-sizing: border-box;
+  background: #f5f5ff;
+  height: auto;
+  vertical-align: middle;
+  margin: 0.25em 0 0 0;
+  box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.3);
+  padding: 1.25em 1em 1.25em 1em;
+}
+.contactPadding .contactUsForm .tag {
+  font-size: 1.25em;
+  font-weight: 300;
+  margin-bottom: 0.25em;
+  color: #251974;
+}
+.contactPadding .contactUsForm label {
+  font-family: 'Raleway', "sans-serif";
+  font-size: 1.25em;
+  font-weight: 400;
+  color: #251974;
+  position: relative;
+  left: +0.75em;
+}
+.contactPadding .contactUsForm textarea {
+  resize: none !important;
+}
+.contactPadding .contactUsForm .input {
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  padding: 5px 10px;
+  width: 90.5%;
+  border: 1px solid #251974;
+  -webkit-border-radius: 5px;
+  border-radius: 3px;
+  font-family: 'Raleway', "sans-serif";
+  font-size: 1.25em;
+  font-weight: 300;
+  color: #251974;
+  margin-bottom: 0.5em;
+  margin-left: 0.75em;
+  margin-right: 0.75em;
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background: rgba(37, 25, 116, 0.075);
+}
+.contactPadding .contactUsForm .input:focus {
+  box-shadow: 0px 0px 2px 0px #251974;
+}
+.contactPadding .contactUsForm .inputSmall {
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  padding: 5px 10px;
+  width: 89%;
+  border: 2px solid #251974;
+  -webkit-border-radius: 5px;
+  border-radius: 3px;
+  font-family: 'Raleway', "sans-serif";
+  font-size: 1.25em;
+  font-weight: 300;
+  color: #251974;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background: rgba(37, 25, 116, 0.075);
+}
+.contactPadding .contactUsForm .inputSmall:focus {
+  box-shadow: 0px 0px 2px 0px #251974;
+}
+.contactPadding .contactUsForm .contactButton {
+  font-family: 'Raleway', "sans-serif";
+  font-size: 1.25em;
+  font-weight: 400;
+  color: #251974;
+  margin-top: 1em;
+  margin-bottom: 0.25em;
+  width: 35%;
+  border: 1px solid #251974;
+  border-radius: 3px;
+  background: rgba(37, 25, 116, 0.075);
+  padding: 0.5em 0em;
+  transition: all 500ms cubic-bezier(0.42, 0, 0.58, 1);
+  cursor: pointer;
+}
+.contactPadding .contactUsForm .contactButton:hover {
+  color: white;
+  border: 1px solid #251974;
+  background: #251974;
 }
 
 /* ================================================================ */

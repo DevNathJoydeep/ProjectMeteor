@@ -17,7 +17,7 @@
 				<li class="active">About Us</li>
 				<a href="userDashboardProfile.php"><li>Dashboard</li></a>
 				<a href="logout.php"><li>Logout</li></a>
-				<li>Contact Us</li>
+				<a href="contactUs.php"><li>Contact Us</li></a>
 			</ul>
 			
 		</div>

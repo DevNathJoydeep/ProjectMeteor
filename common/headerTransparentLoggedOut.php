@@ -13,10 +13,10 @@
 		<div class="headerMenu">
 			
 			<ul>
-				<li>Home</li>
-				<li>About Us</li>
+				<a href="index.php"><li>Home</li></a>
+				<a href="aboutUs.php"><li>About Us</li></a>
 				<a href="login.php"><li>Login</li></a>
-				<li>Contact Us</li>
+				<a href="contactUs.php"><li>Contact Us</li></a>
 			</ul>
 			
 		</div>

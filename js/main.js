@@ -765,4 +765,94 @@ $(document).ready(function(){
 		}
 });
 	
+	$('#contactForm').submit(function() {
+		alert("Your message was sent.");
+	});
+	
+	
+	//preventing gibberish data on passenger names page
+	
+	$(".inputPassengerName").on("keypress",function(e){
+		
+		var noOfDigits=$(this).val().length;
+		
+		if(noOfDigits<50) {
+		
+  			console.log("Entered Key is " + e.key);
+  			switch (e.key)
+  			   {
+  			       case "a":
+  			       case "b":
+  			       case "c":
+  			       case "d":
+  			       case "e":
+  			       case "f":
+  			       case "g":
+  			       case "h":
+  			       case "i":
+  			       case "j":
+				   case "k":
+  			       case "l":
+  			       case "m":
+  			       case "n":
+  			       case "o":
+  			       case "p":
+  			       case "g":
+  			       case "r":
+  			       case "s":
+  			       case "t":
+				   case "u":
+  			       case "v":
+  			       case "w":
+  			       case "x":
+  			       case "y":
+  			       case "z":
+  			       case "A":
+  			       case "B":
+  			       case "C":
+  			       case "D":
+				   case "E":
+  			       case "F":
+  			       case "G":
+  			       case "H":
+  			       case "I":
+  			       case "J":
+  			       case "K":
+  			       case "L":
+  			       case "M":
+  			       case "N":
+				   case "O":
+				   case "P":
+  			       case "Q":
+  			       case "R":
+  			       case "S":
+  			       case "T":
+  			       case "U":
+  			       case "V":
+  			       case "W":
+  			       case "X":
+  			       case "Y":
+  			       case "Z":
+  			       case "Backspace":
+				   case " ":
+  			           return true;
+  			           break;
+			
+  			       default:
+  			           return false;
+  			   }
+		}
+		else {
+			 switch (e.key)
+  			   {
+  			       case "Backspace":
+  			           return true;
+  			           break;
+			
+  			       default:
+  			           return false;
+  			   }
+		}
+});
+	
 }); //document ready()

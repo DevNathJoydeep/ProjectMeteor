@@ -15,8 +15,7 @@
 			<ul>
 				<a href="index.php"><li>Home</li></a>
 				<a href="aboutUs.php"><li>About Us</li></a>
-				<a href="userDashboardProfile.php"><li>Dashboard</li></a>
-				<a href="logout.php"><li>Logout</li></a>
+				<a href="login.php"><li>Login</li></a>
 				<li class="active">Contact Us</li>
 			</ul>
 			

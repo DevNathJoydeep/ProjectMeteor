@@ -10,7 +10,7 @@
 $deep_blue: rgba(37,25,116,1.00);
 $light_blue: rgba(0,111,255,1.00);
 
-.passengersWrapper {
+.aboutUsWrapper {
 	font-family: "Raleway", "sans-serif";
 	height: auto;
 	background: white;
@@ -21,16 +21,44 @@ $light_blue: rgba(0,111,255,1.00);
 		font-weight: 300;
 		color: $deep_blue;
 		text-align: center;
-		margin: 0.25em 0 1.25em 0; 
+		margin: 0.25em 0 0.75em 0; 
 	}
 	
-	.inputPassengerName {
+	.para {
+		font-size: 1.25em;
+		font-weight: 400;
+		color: $deep_blue;
+		text-align: justify;
+		margin: 0.25em 0 1.25em 0;
+		padding: 0 3em;
+	}
+	
+	.boxCenter {
+		box-sizing: border-box;
+		background:rgba(245,245,255,1.00);
+		height: auto;
+		min-height: 27em;
+		vertical-align: middle;
+		margin: 1.5em 2em;
+		border: 2px solid $deep_blue;
+		border-radius: 8px;
+		padding: 1.25em 1em 1.25em 1em;
+	}
+	
+	.tag {
+		font-size: 1.25em;
+		font-weight: 300;
+		margin-bottom: 0.25em;
+		color: $deep_blue;
+	}
+	
+	.input {
   		display: inline-block;
   		-webkit-box-sizing: content-box;
   		-moz-box-sizing: content-box;
   		box-sizing: content-box;
   		padding: 5px 10px;
-  		width: 70%;
+  		width: 90%;
   		border: 2px solid $deep_blue;
   		-webkit-border-radius: 5px;
   		border-radius: 3px;
@@ -57,8 +85,7 @@ $light_blue: rgba(0,111,255,1.00);
   		-moz-box-sizing: content-box;
   		box-sizing: content-box;
   		padding: 5px 10px;
-  		width: 18.5%;
-		height: 1.425em;
+  		width: 89%;
   		border: 2px solid $deep_blue;
   		-webkit-border-radius: 5px;
   		border-radius: 3px;
@@ -79,13 +106,12 @@ $light_blue: rgba(0,111,255,1.00);
 		}
 	}
 	
-	.continueButton {
+	.paymentButton {
 		color: $deep_blue;
 		font-size: 1.25em;
 		margin-top: 1.5em;
-		margin-bottom: 0.75em;
 		font-weight: 300;
-		width: 40%;
+		width: 50%;
 		border: 2px solid $deep_blue;
 		border-radius: 5px;
 		background: rgba(37,25,116,0.075);
@@ -94,43 +120,23 @@ $light_blue: rgba(0,111,255,1.00);
 		cursor: pointer;
 	}
 		
-	.continueButton:hover {
+	.paymentButton:hover {
 		color: white;
 		border: 2px solid $deep_blue;
 		border-radius: 5px;
 		background: $deep_blue;
 	}
 	
-	.boxCenter {
-		box-sizing: border-box;
-		background:rgba(245,245,255,1.00);
-		height: auto;
-		vertical-align: middle;
-		margin: 1.5em 2em;
-		border: 2px solid $deep_blue;
-		border-radius: 8px;
-		padding: 1.25em 1em 1.25em 1em;
-	}
-	
-	.nameTag {
-		font-size: 1.25em;
+	.totalAmount {
+		font-size: 1.5em;
 		font-weight: 300;
-		margin-bottom: 0.25em;
 		color: $deep_blue;
+		text-align: center;
+		margin: -1.8em 0 1.5em 0;
 	}
 	
-	.ageTag {
-		font-size: 1.25em;
-		font-weight: 300;
-		margin-bottom: 0.25em;
-		position: relative;
-		left: +0.25em;
-		color: $deep_blue;
-	}
-	
-	select {
-    -moz-appearance: none;
-    -webkit-appearance:none;
+	.sansSerif {
+		font-family: "sans-serif";
 	}
 	
 }

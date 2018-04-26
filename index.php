@@ -104,6 +104,8 @@
 					</div>
 					
 					<div class="col-xs-12 iconGrids hvr-grow">
+					
+						<a href="hotels.php" style="color: black;">
 						
 						<div class="col-xs-12 icons text-center">
 							<img src="images/icons/hotel.png" alt="hotels" class="iconsDim text-center"/>
@@ -113,55 +115,127 @@
 							Hotels
 						</div>
 						
-					</div>
-					
-					<div class="col-xs-12 iconGrids hvr-grow">
-						
-						<div class="col-xs-12 icons text-center">
-							<img src="images/icons/flight.png" alt="hotels" class="iconsDim text-center"/>
-						</div>
-						
-						<div class="col-xs-12 heading">
-							Flights
-						</div>
+						</a>
 						
 					</div>
 					
 					<div class="col-xs-12 iconGrids hvr-grow">
-						
-						<div class="col-xs-12 icons text-center">
-							<img src="images/icons/train.png" alt="hotels" class="iconsDim text-center"/>
-						</div>
-						
-						<div class="col-xs-12 heading">
-							Trains
-						</div>
+					
+						<a href="flights.php" style="color: black;">
+							
+							<div class="col-xs-12 icons text-center">
+								<img src="images/icons/flight.png" alt="flights" class="iconsDim text-center"/>
+							</div>
+							
+							<div class="col-xs-12 heading">
+								Flights
+							</div>
+							
+						</a>
 						
 					</div>
 					
 					<div class="col-xs-12 iconGrids hvr-grow">
 						
-						<div class="col-xs-12 icons text-center">
-							<img src="images/icons/bus.png" alt="hotels" class="iconsDim text-center"/>
-						</div>
-						
-						<div class="col-xs-12 heading">
-							Buses
-						</div>
-						
+						<a href="trains.php" style="color: black;">
+							
+							<div class="col-xs-12 icons text-center">
+								<img src="images/icons/train.png" alt="trains" class="iconsDim text-center"/>
+							</div>
+							
+							<div class="col-xs-12 heading">
+								Trains
+							</div>
+							
+						</a>
+							
 					</div>
 					
 					<div class="col-xs-12 iconGrids hvr-grow">
 						
-						<div class="col-xs-12 icons text-center">
-							<img src="images/icons/taxi.png" alt="hotels" class="iconsDim text-center"/>
+						<a href="bus.php" style="color: black;">
+							
+							<div class="col-xs-12 icons text-center">
+								<img src="images/icons/bus.png" alt="buses" class="iconsDim text-center"/>
+							</div>
+							
+							<div class="col-xs-12 heading">
+								Buses
+							</div>
+							
+						</a>
+							
+					</div>
+					
+					<div class="col-xs-12 iconGrids hvr-grow">
+						
+						<a href="cabs.php" style="color: black;">
+							
+							<div class="col-xs-12 icons text-center">
+								<img src="images/icons/taxi.png" alt="cabs" class="iconsDim text-center"/>
+							</div>
+							
+							<div class="col-xs-12 heading">
+								Cabs
+							</div>
+							
+						</a>
+							
+					</div>
+					
+				</div>
+				
+			</div>
+			
+			<!-- popularDestinations -->
+			
+			<div class="col-xs-12 popularDestinationsContainer">
+				
+				<div class="col-xs-12 destinationHolder">
+				
+					<div class="col-xs-12 destinationQuote">
+					
+						Popular Destinations
+						
+					</div>
+					
+					<div class="col-xs-12 containerGrids hvr-buzz-out">
+						
+						<div class="col-xs-12 pics text-center">
+							<img src="images/popularDestinations/imageAndaman.jpg" alt="popularDestination1" class="picDim text-center"/>
 						</div>
 						
 						<div class="col-xs-12 heading">
-							Cabs
+							Andaman and Nicobar
 						</div>
 						
 					</div>
+					
+					<div class="col-xs-12 containerGrids hvr-buzz-out">
+						
+						<div class="col-xs-12 pics text-center">
+							<img src="images/popularDestinations/imageJaisalmer.jpg" alt="popularDestination1" class="picDim text-center"/>
+						</div>
+						
+						<div class="col-xs-12 heading">
+							Rajasthan
+						</div>
+						
+					</div>
+					
+					<div class="col-xs-12 containerGrids hvr-buzz-out">
+						
+						<div class="col-xs-12 pics text-center">
+							<img src="images/popularDestinations/imageKashmir.jpg" alt="popularDestination1" class="picDim text-center"/>
+						</div>
+						
+						<div class="col-xs-12 heading">
+							Jammu and Kashmir
+						</div>
+						
+					</div>
+					
+					
 					
 				</div>
 				
@@ -180,11 +254,11 @@
 						</div>
 							
 						<div class="footerText">
-							1, Imaginary Road <br> Unknown City- 000000
+							3rd floor, Basai Enclave, Sector 10, <br> Gurugram-122006, Haryana, India
 						</div>
 				
 						<div class="footerText">
-							E-mail: user@site.domain
+							E-mail: queries@travelwale.com
 						</div>
 						
 					</div>
@@ -216,19 +290,19 @@
 						<div class="socialLinks">
 						
 							<div class="fb">
-								facebook.com/xyz
+								facebook.com/travelwale
 							</div>
 						
 							<div class="gp">
-								plus.google.com/xyz
+								plus.google.com/travelwale
 							</div>
 						
 							<div class="tw">
-								twitter.com/xyz
+								twitter.com/travelwale
 							</div>
 						
 							<div class="in">
-								linkedin.com/xyz
+								linkedin.com/travelwale
 							</div>
 						
 						</div> <!-- social links -->
@@ -238,7 +312,7 @@
 					<div class="col-sm-12">
 					<div class="copyrightContainer">
 						<div class="copyright">
-						Copyright &copy; 2017 Joydeep Dev Nath.
+						Copyright &copy; 2018 Joydeep Dev Nath.
 						</div>
 					</div>
 					</div>

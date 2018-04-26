@@ -114,7 +114,7 @@ if(!isset($_SESSION["username"]))
 				
 				<div class="col-sm-9 nameTag">Name of passenger <?php echo $i; ?>:</div>
 				<div class="col-sm-3 ageTag">Gender:</div>
-				<input type="text" class="input" name="name<?php echo $i; ?>" placeholder="Enter the full name of the passenger <?php echo $i; ?>" />
+				<input type="text" class="inputPassengerName" name="name<?php echo $i; ?>" placeholder="Enter the full name of the passenger <?php echo $i; ?>" />
 				<select class="inputSmall" name="gender<?php echo $i; ?>" />
 					
 					<option value="Male">Male</option>

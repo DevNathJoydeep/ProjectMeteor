@@ -138,7 +138,7 @@ ob_start();
 				
 				<div class="col-sm-3 text-right">
 					
-					<img src="images/logo.png" alt="Project Meteor Logo" />
+					<a href="./"><img src="images/logo.png" alt="Project Meteor Logo" /></a>
 					
 				</div>
 				

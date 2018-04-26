@@ -23,8 +23,8 @@
 		.logo {
 			box-sizing: border-box;
 			height: 4em;
-			width: 8em;
-			margin: 2em 2em 2em 0.75em;
+			width: 15em;
+			margin: 1.5em 2em 2em 0.75em;
 			background: url(../images/logo.png) no-repeat;
 	    	background-size: 100% 100%;
 		}
@@ -141,6 +141,60 @@
 				
 				.iconsDim {
 					height: 96px;
+					display: block !important;
+					margin-left: auto !important;
+					margin-right: auto !important;
+				}
+			}
+			
+			.heading {
+				font-size: 1.25em;
+				font-family: "Raleway", "sans-serif";
+				text-align: center;
+				margin-top: 1em;
+			}
+			
+		}
+	}
+	
+	.popularDestinationsContainer {
+		padding: 1em;
+		margin: -1em 0 4em 0;	
+		
+		.destinationHolder {
+			background: white;
+			box-shadow: 0 0 5px 1px rgba(0,0,0,0.5);
+			margin-top: 1em;
+			padding: 2.5em 1.5em 1.5em 1.5em!important;
+			overflow: hidden !important;
+			
+			.destinationQuote {
+				font-family: "Raleway", "sans-serif";
+				color: $deep_blue;
+				font-size: 1.85em;
+				text-align: center;
+				margin-bottom: 0.75em;
+				font-weight: 300;
+			}
+		
+			.containerGrids {
+				width: 33.33%;
+				padding: 0.5em 1em;
+				margin: 1.5em 0;
+				cursor: pointer;
+				transition: $transition500;
+				
+				.pics {
+					margin: auto !important;
+					text-align: center !important;
+					border: 2px solid white;
+					box-shadow: 0 0 5px 1px rgba(0,0,0,0.5);
+					padding: 1em !important;
+				}
+				
+				.picDim {
+					height: 225px;
+					width: 100%;
 					display: block !important;
 					margin-left: auto !important;
 					margin-right: auto !important;
